@@ -17,6 +17,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     
     " Code completion | LSP
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Linting
+    Plug 'dense-analysis/ale'
     " Indentline
     " Plug 'Yggdroot/indentLine'   
 
@@ -47,6 +49,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " elixir
     Plug 'elixir-editors/vim-elixir'
     Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
+
+    " Ranger
+    Plug 'kevinhwang91/rnvimr'
 
 call plug#end()
 
