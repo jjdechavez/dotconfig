@@ -12,17 +12,22 @@ source $HOME/.config/nvim/keys/mappings.vim
 " source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/ale.vim
-source $HOME/.config/nvim/plug-config/nvimtree-config.vim
+" source $HOME/.config/nvim/plug-config/nvimtree-config.vim
 source $HOME/.config/nvim/plug-config/telescope-config.vim
 " Lua plug config
 luafile $HOME/.config/nvim/lua/plugins/compe-config.lua
-" luafile $HOME/.config/nvim/lua/plugins/nvimtree-config.lua
+luafile $HOME/.config/nvim/lua/plugins/nvimtree-config.lua
 
 " LSP
 source $HOME/.config/nvim/plug-config/lsp-config.vim
 luafile $HOME/.config/nvim/lua/lsp/python-ls.lua
-luafile $HOME/.config/nvim/lua/lsp/typescript-ls.lua
+luafile $HOME/.config/nvim/lua/lsp/js-ts-ls.lua
 luafile $HOME/.config/nvim/lua/lsp/html-ls.lua
+luafile $HOME/.config/nvim/lua/lsp/bash-ls.lua
+luafile $HOME/.config/nvim/lua/lsp/css-ls.lua
+luafile $HOME/.config/nvim/lua/lsp/graphql-ls.lua
+luafile $HOME/.config/nvim/lua/lsp/vim-ls.lua
+luafile $HOME/.config/nvim/lua/lsp/elixir-ls.lua
 
 " Theme's
 source $HOME/.config/nvim/themes/airline.vim
