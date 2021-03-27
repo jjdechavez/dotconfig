@@ -10,18 +10,28 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
+
     " File Explorer
-    Plug 'scrooloose/NERDTree'
+    " Plug 'scrooloose/NERDTree'
+    Plug 'kyazdani42/nvim-web-devicons' " for file icons
+    Plug 'kyazdani42/nvim-tree.lua'
+
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
-    
+
     " Code completion | LSP
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/nvim-compe'
+    Plug 'hrsh7th/vim-vsnip'
+    Plug 'hrsh7th/vim-vsnip-integ'
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
     " Linting
     Plug 'dense-analysis/ale'
+
     " Indentline
     " Plug 'Yggdroot/indentLine'   
-
+    
     " Theme
     Plug 'tomasiser/vim-code-dark'
     Plug 'arzg/vim-colors-xcode'    
@@ -30,6 +40,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'sonph/onehalf', { 'rtp': 'vim' }
     Plug 'adrian5/oceanic-next-vim'
+    Plug 'altercation/vim-colors-solarized'
 
     " Git
     Plug 'tpope/vim-fugitive'
@@ -38,11 +49,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-rooter'  
+
     " Commenting
     Plug 'tpope/vim-commentary'
 
     " Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build' }
-
     " Solidity syntax files for Solidity
     Plug 'tomlion/vim-solidity'
 
