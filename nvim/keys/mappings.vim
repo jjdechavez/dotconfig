@@ -50,17 +50,9 @@ vnoremap K :m '<-2<CR>gv=gv
 " Search and replace
 nmap <leader>s :%s/-/-/g<CR>
 
-" CocRestart
-cnoremap CR CocRestart<CR>
 " BLines
 cnoremap BL BL<CR>
 
 " shell
 map <leader>ba i#!/bin/sh<CR><CR>
 autocmd FileType sh inoremap ,f ()<Space>{<CR><Tab><++><CR>}<CR><CR><++><Esc>?()<CR>
-
-" html
-autocmd FileType html inoremap ! <!DOCTYPE html><CR><html lang="en"><CR><head><CR><meta charset="UTF-8"><CR><meta name="viewport" content="width=device-width, initial-scake=1.0"><CR><title>Document</title><CR></head><CR><body><CR><CR></body><CR></html>
-
-" ts
-" autocmd FileType ts nnoremap <C-t> I//
