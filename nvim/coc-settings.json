@@ -2,7 +2,7 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "markdown",
-    "javascript",
+    /* "javascript", */
     "graphql",
     "html",
     "html.eex",
@@ -10,7 +10,7 @@
     "json",
     "python",
     "c",
-    //    "cpp",
+    //"cpp",
     "c++"
   ],
   // Disabled: File is a CommonJS module; it may be converted to an ES6 module.

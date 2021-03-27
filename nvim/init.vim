@@ -34,9 +34,7 @@ source $HOME/.config/nvim/themes/airline.vim
 " source $HOME/.config/nvim/themes/gruvbox.vim
 " source $HOME/.config/nvim/themes/oceanic-next.vim
 " source $HOME/.config/nvim/themes/solorized.vim
-" hi Normal guibg=NONE ctermbg=NONE
 
-" Compe Autocomplete mappings 
 inoremap <silent><expr> <C-Space> compe#complete()
 inoremap <silent><expr> <CR>      compe#confirm('<CR>')
 inoremap <silent><expr> <C-e>     compe#close('<C-e>')

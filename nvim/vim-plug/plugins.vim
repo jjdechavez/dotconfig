@@ -24,6 +24,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'hrsh7th/nvim-compe'
     Plug 'hrsh7th/vim-vsnip'
     Plug 'hrsh7th/vim-vsnip-integ'
+    Plug 'glepnir/lspsaga.nvim'
     " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Linting

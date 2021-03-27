@@ -1,3 +1,8 @@
+nnoremap <leader>e :NERDTreeFocus<CR>
+nnoremap <leader>e NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
 " Start NERDTree and leave the cursor in it.
 " autocmd VimEnter * NERDTree
 
