@@ -29,6 +29,7 @@ luafile $HOME/.config/nvim/lua/lsp/graphql-ls.lua
 luafile $HOME/.config/nvim/lua/lsp/vim-ls.lua
 luafile $HOME/.config/nvim/lua/lsp/elixir-ls.lua
 
+
 " Theme's
 source $HOME/.config/nvim/themes/airline.vim
 " source $HOME/.config/nvim/themes/vim-colors-xcode.vim

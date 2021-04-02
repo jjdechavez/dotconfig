@@ -27,6 +27,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'glepnir/lspsaga.nvim'
     " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+    " Highlights
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/playground'
+
     " Linting
     Plug 'dense-analysis/ale'
 
