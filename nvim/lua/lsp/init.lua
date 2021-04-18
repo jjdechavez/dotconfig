@@ -28,7 +28,8 @@ end
 
 function lsp_config.tsserver_on_attach(client, bufnr)
     lsp_config.common_on_attach(client, bufnr)
-    client.resolved_capabilities.document_formatting = false
+    -- client.resolved_capabilities.document_formatting = true
+    -- map('n','<leader>P', '<cmd>lua vim.lsp.buf.formatting()<CR>')
 end
 
 -- Use a loop to conveniently both setup defined servers

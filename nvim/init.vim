@@ -11,7 +11,8 @@ source $HOME/.config/nvim/keys/mappings.vim
 " source $HOME/.config/nvim/plug-config/nerdtree.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
-" source $HOME/.config/nvim/plug-config/ale.vim
+source $HOME/.config/nvim/plug-config/ale.vim
+source $HOME/.config/nvim/plug-config/vsnip.vim
 " source $HOME/.config/nvim/plug-config/telescope-config.vim
 " Lua plug config
 luafile $HOME/.config/nvim/lua/plugins/compe-config.lua
@@ -27,7 +28,7 @@ luafile $HOME/.config/nvim/lua/lsp/bash-ls.lua
 luafile $HOME/.config/nvim/lua/lsp/css-ls.lua
 luafile $HOME/.config/nvim/lua/lsp/graphql-ls.lua
 luafile $HOME/.config/nvim/lua/lsp/vim-ls.lua
-luafile $HOME/.config/nvim/lua/lsp/elixir-ls.lua
+" luafile $HOME/.config/nvim/lua/lsp/elixir-ls.lua
 
 
 " Theme's

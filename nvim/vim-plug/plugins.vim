@@ -22,9 +22,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Code completion | LSP
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-compe'
+    Plug 'glepnir/lspsaga.nvim'
+
+    " Snippets
     Plug 'hrsh7th/vim-vsnip'
     Plug 'hrsh7th/vim-vsnip-integ'
-    Plug 'glepnir/lspsaga.nvim'
+    Plug 'rafamadriz/friendly-snippets'
     " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Highlights

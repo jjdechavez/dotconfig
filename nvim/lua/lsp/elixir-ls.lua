@@ -3,5 +3,5 @@
 -- # Unix
 -- chmod +x /path/to/elixir-ls/language_server.sh
 require'lspconfig'.elixirls.setup{
-  cmd = { "~/.elixir-ls/release/language_server.sh" };
+  cmd = { "$HOME/.elixir-ls/release/language_server.sh" };
 }
