@@ -15,8 +15,9 @@ nnoremap <silent> <C-p> :Lspsaga diagnostic_jump_prev<CR>
 nnoremap <silent> <C-n> :Lspsaga diagnostic_jump_next<CR>
 
 " auto-format
-autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1500)
+autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 1500)
+autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 1500)
+autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_sync(nil, 1500)
+autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1500)
+" autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync(nil, 100)

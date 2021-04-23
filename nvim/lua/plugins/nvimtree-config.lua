@@ -50,20 +50,8 @@ vim.g.nvim_tree_bindings = {
 vim.g.nvim_tree_icons = {
     default = '',
     symlink = '',
-    git = {
-        unstaged = "",
-        staged = "✓",
-        unmerged = "",
-        renamed = "➜",
-        untracked = ""
-    },
-    folder = {
-        default = "",
-        open = "",
-        empty = "",
-        empty_open = "",
-        symlink = ""
-    }
+    git = {unstaged = "", staged = "✓", unmerged = "", renamed = "➜", untracked = ""},
+    folder = {default = "", open = "", empty = "", empty_open = "", symlink = ""}
 }
 
 local map = vim.api.nvim_set_keymap

@@ -21,6 +21,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Code completion | LSP
     Plug 'neovim/nvim-lspconfig'
+    Plug 'kabouzeid/nvim-lspinstall'
     Plug 'hrsh7th/nvim-compe'
     Plug 'glepnir/lspsaga.nvim'
 
