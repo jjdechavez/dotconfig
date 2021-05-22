@@ -1,4 +1,5 @@
 " General
+luafile $HOME/.config/nvim/lua/global.lua
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/path/paths.vim
@@ -17,6 +18,7 @@ source $HOME/.config/nvim/plug-config/vsnip.vim
 " source $HOME/.config/nvim/plug-config/telescope-config.vim
 " Lua plug config
 luafile $HOME/.config/nvim/lua/plugins/compe-config.lua
+luafile $HOME/.config/nvim/lua/plugins/lspinstall-config.lua
 luafile $HOME/.config/nvim/lua/plugins/nvimtree-config.lua
 luafile $HOME/.config/nvim/lua/plugins/treesitter-config.lua
 
