@@ -1,5 +1,23 @@
+local lspconfig = require 'lspconfig'
+local configs = require 'lspconfig/configs'
 
-require'lspconfig'.tailwindcss.setup {
+-- Check if tailwindls server already defined.
+if not lspconfig.tailwindcss then configs['tailwindls'] = {default_config = {}} end
+
+lspconfig.tailwindcss.setup {
+    settings = {
+        tailwindCSS = {
+          experimental = {
+            classRegex = {
+              "tw`([^`]*)", -- tw`...`
+              "tw=\"([^\"]*)", -- <div tw="..." />
+              "tw={\"([^\"}]*)", -- <div tw={"..."} />
+              "tw\\.\\w+`([^`]*)", -- tw.xxx`...`
+              "tw\\(.*?\\)`([^`]*)"
+            }
+          }
+        }
+    },
     filetypes = {'html', 'css', 'scss', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'},
     root_dir = require('lspconfig/util').root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git", "tailwind.config.js"),
     handlers = {

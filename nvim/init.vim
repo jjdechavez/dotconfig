@@ -33,6 +33,7 @@ luafile $HOME/.config/nvim/lua/lsp/css-ls.lua
 luafile $HOME/.config/nvim/lua/lsp/graphql-ls.lua
 luafile $HOME/.config/nvim/lua/lsp/vim-ls.lua
 luafile $HOME/.config/nvim/lua/lsp/lua-ls.lua
+luafile $HOME/.config/nvim/lua/lsp/tailwindcss-ls.lua
 " luafile $HOME/.config/nvim/lua/lsp/elixir-ls.lua
 
 
