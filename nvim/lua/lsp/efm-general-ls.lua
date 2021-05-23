@@ -13,8 +13,8 @@ local eslintFormat = {
     lintIgnoreExitCode = true,
     lintStdin = true,
     lintFormats = {"%f:%l:%c: %m"},
-    formatCommand = "./node_modules/.bin/eslint --fix-to-stdout --stdin --stdin-filename=${INPUT}",
-    formatStdin = true
+    -- formatCommand = "./node_modules/.bin/eslint --fix-to-stdout --stdin --stdin-filename=${INPUT}",
+    -- formatStdin = true
 }
 
 require"lspconfig".efm.setup {
@@ -29,7 +29,11 @@ require"lspconfig".efm.setup {
             javascript = {prettierFormat, eslintFormat},
             javascriptreact = {prettierFormat, eslintFormat},
             typescript = {prettierFormat, eslintFormat}, 
-            typescriptreact = {prettierFormat, eslintFormat}
+            typescriptreact = {prettierFormat, eslintFormat},
+            html = {prettierFormat},
+            css = {prettierFormat},
+            json = {prettierFormat},
+            yaml = {prettierFormat},
         }
     }
 }
