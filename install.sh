@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "$OSTYPE"
-
 # Installing Nerd Font
 installnerdfont() {
   echo "Work: Installing nerd fonts"
@@ -50,10 +48,34 @@ installfzfonubuntu() {
   sudo apt install fd-find
 }
 
+# Installing tmux
+installtmux() {
+  echo "Work: Installing tmux"
+  [ -n "$(cat /etc/os-release | grep Ubuntu)" ] && installtmuxonubuntu
+  [ -f "/etc/arch-release" ] && installtmuxonarch
+
+  echo "Work: Copy .tmux.conf"
+  cp ./tmux/.tmux.conf $HOME/.tmux.conf
+  echo "Done: Installing tmux"
+}
+
+installtmuxonubuntu() {
+  echo "Installing tmux on ubuntu"
+  sudo apt-get install tmux
+  sudo apt-get install -y xclip
+}
+
+installtmuxonarch() {
+  echo "Installing tmux on arch"
+  sudo pacman -S tmux
+  sudo pacman -S xclip
+}
+
 setup() {
   echo "Starting to setup.."
   installnerdfont
   installfzf
+  installtmux
   echo "Done"
 }
 
