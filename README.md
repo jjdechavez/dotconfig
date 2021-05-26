@@ -1,4 +1,10 @@
 # dotconfig
 
-For setup make sure execute the file `chmod +x ./install.sh`.
-Run `./install.sh`
+### Installation
+
+Requirements:
+- [NodeJs](https://nodejs.org/en/)
+
+For setup, make sure turn `./install.sh` to executable file: `chmod +x ./install.sh`.
+
+Then, run `./install.sh`
