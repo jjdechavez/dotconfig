@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installing Nerd Font
-installnerdfont() {
+install_nerdfont() {
   echo "Work: Installing nerd fonts"
   echo "Creating folder for fonts at ~/.local/share/fonts"
   mkdir -p ~/.local/share/fonts
@@ -14,58 +14,50 @@ installnerdfont() {
 }
 
 # Installing FZF
-installfzf() {
+install_fzf() {
   echo "Work: Installing FZF"
   # [  ] - meaning test the command inside of the brackets
-  [ -n "$(cat /etc/os-release | grep Ubuntu)" ] && installfzfonubuntu
-  [ -f "/etc/arch-release" ] && installfzfonarch
+  [ -n "$(cat /etc/os-release | grep Ubuntu)" ] && install_fzf_on_ubuntu
+  [ -f "/etc/arch-release" ] && install_fzf_on_arch
   echo "Done: Installing FZF"
 }
 
-installfzfonarch() {
+install_fzf_on_arch() {
   echo "Installing fzf on arch"
   sudo pacman -S fzf
-
   sudo pacman -S ripgrep
-
   # yay -S universal-ctags-git
-
   sudo pacman -S the_silver_searcher
-
   pacman -S fd
 }
 
-installfzfonubuntu() {
+install_fzf_on_ubuntu() {
   echo "Installing fzf on ubuntu"
   sudo apt install fzf
-
   sudo apt install ripgrep
-
   sudo apt install universal-ctags
-
   sudo apt install silversearcher-ag
-
   sudo apt install fd-find
 }
 
 # Installing tmux
-installtmux() {
+install_tmux() {
   echo "Work: Installing tmux"
-  [ -n "$(cat /etc/os-release | grep Ubuntu)" ] && installtmuxonubuntu
-  [ -f "/etc/arch-release" ] && installtmuxonarch
+  [ -n "$(cat /etc/os-release | grep Ubuntu)" ] && install_tmux_on_ubuntu
+  [ -f "/etc/arch-release" ] && install_tmux_on_arch
 
   echo "Work: Copy .tmux.conf"
   cp ./tmux/.tmux.conf $HOME/.tmux.conf
   echo "Done: Installing tmux"
 }
 
-installtmuxonubuntu() {
+install_tmux_on_ubuntu() {
   echo "Installing tmux on ubuntu"
   sudo apt-get install tmux
   sudo apt-get install -y xclip
 }
 
-installtmuxonarch() {
+install_tmux_on_arch() {
   echo "Installing tmux on arch"
   sudo pacman -S tmux
   sudo pacman -S xclip
@@ -73,9 +65,9 @@ installtmuxonarch() {
 
 setup() {
   echo "Starting to setup.."
-  installnerdfont
-  installfzf
-  installtmux
+  install_nerdfont
+  install_fzf
+  install_tmux
   echo "Done"
 }
 
