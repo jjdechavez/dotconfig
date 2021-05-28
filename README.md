@@ -10,5 +10,5 @@ Then, run `./install.sh`
  - [X] Installation nerd fonts.
  - [X] Installation FZF.
  - [X] Installation tmux
+ - [X] ts-server doesn't attached when using javascript (Used the binary typescript-language-server)
  - [  ] Installation ranger
- - [  ] ts-server doesn't attached when using javascript
