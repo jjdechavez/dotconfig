@@ -12,7 +12,7 @@ askForGitUser() {
 
 isGitConfigFileExist() {
   echo "Is gitconfig exist?"
-  if [[ -f $HOME/.sample ]]; then
+  if [[ -f $HOME/.gitconfig ]]; then
     echo "Gitconfig existed"
     getGitUser
   else
@@ -24,10 +24,10 @@ isGitConfigFileExist() {
 setUserGitConfig() {
   echo -e '\nGit info set:'
 
-  # git config --global user.name "$gitName"
+  git config --global user.name "$gitName"
   echo Your git name set: $gitName
 
-  # git config --global user.email $gitEmail
+  git config --global user.email $gitEmail
   echo Your git email set: $gitEmail
 }
 
