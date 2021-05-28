@@ -14,3 +14,4 @@ Then, run `./install.sh`
  - [X] Installation FZF.
  - [X] Installation tmux
  - [  ] Installation ranger
+ - [  ] ts-server doesn't attached when using javascript
