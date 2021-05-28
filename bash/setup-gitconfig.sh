@@ -1,13 +1,37 @@
 #!/bin/bash
 
-echo Starting to setup gitconfig
-# Ask the user for their username
-# Check user.name and user.global exist then ask if going to overwrite
-read -p 'Git name: ' gitname
-read -p 'Git email: ' gitemail
+getGitUser() {
+  gitName=$(git config --global user.name)
+  gitEmail=$(git config --global user.email)
+}
 
-echo -e '\nGit info set:'
-git config --global user.name "$gitname"
-echo Your git name set: $gitname
-git config --global user.email $gitemail
-echo Your git email set: $gitemail
+askForGitUser() {
+  read -p 'Git name: ' gitName
+  read -p 'Git email: ' gitEmail
+}
+
+isGitConfigFileExist() {
+  echo "Is gitconfig exist?"
+  if [[ -f $HOME/.sample ]]; then
+    echo "Gitconfig existed"
+    getGitUser
+  else
+    echo "Gitconfig does not exist."
+    askForGitUser
+  fi
+}
+
+setUserGitConfig() {
+  echo -e '\nGit info set:'
+
+  # git config --global user.name "$gitName"
+  echo Your git name set: $gitName
+
+  # git config --global user.email $gitEmail
+  echo Your git email set: $gitEmail
+}
+
+echo Starting to setup gitconfig
+isGitConfigFileExist
+
+setUserGitConfig
