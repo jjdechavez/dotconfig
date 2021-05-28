@@ -138,15 +138,15 @@ ex ()
   fi
 }
 
-export PATH=/usr/local/lib/nodejs/node-v14.17.0-linux-x64/bin:$PATH
+# export PATH=/usr/local/lib/nodejs/node-v14.17.0-linux-x64/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 # Go Config PATH
-export PATH=/home/$USER/.local/go/bin:$PATH
+export PATH=$HOME/.local/go/bin:$PATH
 export GOPATH=$HOME/.local/go
 export PATH=$PATH:/usr/local/go/bin
 
-alias techmaker='cd /mnt/ExternalHDD/techmaker'
-alias my='cd /mnt/ExternalHDD/my'
+alias techmaker='git work && echo "Git email: $(git email)" && cd /mnt/ExternalHDD/techmaker'
+alias my='git personal && echo "Git email: $(git email)" && cd /mnt/ExternalHDD/my'
 alias playground='cd /mnt/ExternalHDD/playGround'
-alias clone-repos='cd /mnt/ExternalHDD/clone-repo'
+alias clone-repos='git personal && echo "Git email: $(git email)" && cd /mnt/ExternalHDD/clone-repo'
