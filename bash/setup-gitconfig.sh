@@ -1,8 +1,31 @@
 #!/bin/bash
 
 getGitUser() {
-  gitName=$(git config --global user.name)
-  gitEmail=$(git config --global user.email)
+  if [[ -z $(git config --global user.name) ]]; then
+    askGitUserName
+  else
+    overwriteGitUserName
+  fi
+  # gitEmail=$(git config --global user.email)
+}
+
+askGitUserName() {
+  read -p 'Git name: ' gitName
+
+  while [[ -z $gitName ]]; do
+    echo 'Please enter your git name!'
+    read -p 'Git name: ' gitName
+  done
+}
+
+overwriteGitUserName() {
+  read -p 'Overwrite your git name? [Y/n]' overwrite
+
+  if [[ $overwrite == "Y" || $overwrite == "yes" || $overwrite == "y" ]]; then
+    askGitUserName
+  else 
+    gitName=$(git config --global user.name)
+  fi
 }
 
 askForGitUser() {
@@ -31,7 +54,11 @@ setUserGitConfig() {
   echo Your git email set: $gitEmail
 }
 
-echo Starting to setup gitconfig
-isGitConfigFileExist
+setupGitConfig() {
+  echo Starting to setup gitconfig
+  isGitConfigFileExist
 
-setUserGitConfig
+  setUserGitConfig
+}
+
+setupGitConfig
