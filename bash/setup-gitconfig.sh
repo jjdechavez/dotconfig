@@ -84,19 +84,42 @@ isGitConfigFileExist() {
 }
 
 setUserGitConfig() {
-  echo -e '\nGit info set:'
-
   git config --global user.name "$gitName"
-  echo Your git name set: $gitName
-
   git config --global user.email $gitEmail
-  echo Your git email set: $gitEmail
+}
+
+displayGitConfig() {
+  echo -e '\nGit user:'
+  echo "git name: $gitName"
+  echo "git email: $gitEmail"
+
+  echo -e '\nGit alias:'
+  echo "git personal email: $gitPersonalEmail"
+  echo "git work email: $gitWorkEmail"
+}
+
+setGitConfigAliasPersonal() {
+  read -p "Git personal user email: " gitPersonalEmail
+  git config --global alias.personal "config --global user.email $gitPersonalEmail"
+}
+
+setGitConfigAliasWork() {
+  read -p "Git work user email: " gitWorkEmail
+  git config --global alias.work "config --global user.email $gitWorkEmail"
+}
+
+setGitConfigAlias() {
+  echo "Setup git config alias for personal and work."
+  setGitConfigAliasPersonal
+  setGitConfigAliasWork
 }
 
 setupGitConfig() {
   echo Starting to setup gitconfig
   isGitConfigFileExist
+  setGitConfigAlias
   setUserGitConfig
+  displayGitConfig
 }
 
 setupGitConfig
