@@ -108,8 +108,14 @@ setGitConfigAliasWork() {
   git config --global alias.work "config --global user.email $gitWorkEmail"
 }
 
+setGitConfigAliasEmail() {
+  echo "Added git alias email"
+  git config --global alias.email "config --global user.email"
+}
+
 setGitConfigAlias() {
   echo "Setup git config alias for personal and work."
+  setGitConfigAliasEmail
   setGitConfigAliasPersonal
   setGitConfigAliasWork
 }
