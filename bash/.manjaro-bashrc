@@ -138,6 +138,10 @@ ex ()
   fi
 }
 
+test-microphone() {
+    arecord -vvv -f dat /dev/null
+}
+
 # export PATH=/usr/local/lib/nodejs/node-v14.17.0-linux-x64/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
@@ -150,3 +154,4 @@ alias techmaker='git work && echo "Git email: $(git email)" && cd /mnt/ExternalH
 alias my='git personal && echo "Git email: $(git email)" && cd /mnt/ExternalHDD/my'
 alias playground='cd /mnt/ExternalHDD/playGround'
 alias clone-repos='git personal && echo "Git email: $(git email)" && cd /mnt/ExternalHDD/clone-repo'
+alias test-microphone='test-microphone'
