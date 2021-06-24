@@ -145,6 +145,10 @@ test-microphone() {
 # export PATH=/usr/local/lib/nodejs/node-v14.17.0-linux-x64/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
+# ruby - rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 # Go Config PATH
 export PATH=$HOME/.local/go/bin:$PATH
 export GOPATH=$HOME/.local/go
