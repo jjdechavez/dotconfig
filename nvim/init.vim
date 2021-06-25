@@ -21,11 +21,13 @@ luafile $HOME/.config/nvim/lua/plugins/compe-config.lua
 luafile $HOME/.config/nvim/lua/plugins/lspinstall-config.lua
 luafile $HOME/.config/nvim/lua/plugins/nvimtree-config.lua
 luafile $HOME/.config/nvim/lua/plugins/treesitter-config.lua
+luafile $HOME/.config/nvim/lua/plugins/dap-config.lua
 
 " LSP
 source $HOME/.config/nvim/plug-config/lsp-config.vim
 luafile $HOME/.config/nvim/lua/lsp/efm-general-ls.lua
 luafile $HOME/.config/nvim/lua/lsp/python-ls.lua
+luafile $HOME/.config/nvim/lua/lsp/ruby-ls.lua
 luafile $HOME/.config/nvim/lua/lsp/js-ts-ls.lua
 luafile $HOME/.config/nvim/lua/lsp/html-ls.lua
 luafile $HOME/.config/nvim/lua/lsp/bash-ls.lua

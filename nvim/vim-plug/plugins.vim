@@ -76,6 +76,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Ranger
     Plug 'kevinhwang91/rnvimr'
 
+    " Debugging
+    Plug 'mfussenegger/nvim-dap'
+
 call plug#end()
 
 " autocmd VimEnter *
