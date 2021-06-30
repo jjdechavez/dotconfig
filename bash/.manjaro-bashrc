@@ -142,6 +142,10 @@ test-microphone() {
     arecord -vvv -f dat /dev/null
 }
 
+setup-dlsr-webcam() {
+	gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video2
+}
+
 # export PATH=/usr/local/lib/nodejs/node-v14.17.0-linux-x64/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
@@ -155,7 +159,9 @@ export GOPATH=$HOME/.local/go
 export PATH=$PATH:/usr/local/go/bin
 
 alias techmaker='git work && echo "Git email: $(git email)" && cd /mnt/ExternalHDD/techmaker'
+alias digiteer='git work && echo "Git email: $(git email)" && cd /mnt/ExternalHDD/office/digiteer'
 alias my='git personal && echo "Git email: $(git email)" && cd /mnt/ExternalHDD/my'
 alias playground='cd /mnt/ExternalHDD/playGround'
 alias clone-repos='git personal && echo "Git email: $(git email)" && cd /mnt/ExternalHDD/clone-repo'
 alias test-microphone='test-microphone'
+alias dlsr-webcam='setup-dlsr-webcam'
