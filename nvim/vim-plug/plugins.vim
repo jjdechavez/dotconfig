@@ -73,11 +73,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'elixir-editors/vim-elixir'
     Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
 
+    " rails
+    Plug 'tpope/vim-rails'
+
     " Ranger
     Plug 'kevinhwang91/rnvimr'
 
     " Debugging
     Plug 'mfussenegger/nvim-dap'
+
+    Plug 'AndrewRadev/tagalong.vim'
 
 call plug#end()
 
