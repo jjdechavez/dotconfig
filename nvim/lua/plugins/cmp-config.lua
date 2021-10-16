@@ -36,7 +36,10 @@ cmp.setup({
   }
 })
 
+-- print "INtsalled server"
+-- print(require'lspinstall'.installed_servers)
+
 -- Setup lspconfig.
-require('lspconfig')[%YOUR_LSP_SERVER%].setup {
-  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-}
+-- require('lspconfig')[require'lspinstall'.installed_servers].setup {
+--   capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- }

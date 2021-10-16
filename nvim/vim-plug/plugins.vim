@@ -22,15 +22,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Code completion | LSP
     Plug 'neovim/nvim-lspconfig'
     Plug 'kabouzeid/nvim-lspinstall'
-    " Plug 'hrsh7th/nvim-compe'
+    Plug 'hrsh7th/nvim-compe'
     Plug 'glepnir/lspsaga.nvim'
 
     " New Autocomplete
-    Plug 'hrsh7th/cmp-nvim-lsp'
-    Plug 'hrsh7th/cmp-buffer'
-    Plug 'hrsh7th/nvim-cmp'
+    " Plug 'hrsh7th/cmp-nvim-lsp'
+    " Plug 'hrsh7th/cmp-buffer'
+    " Plug 'hrsh7th/nvim-cmp'
 
     " Snippets
+    " Plug 'hrsh7th/cmp-vsnip'
     Plug 'hrsh7th/vim-vsnip'
     Plug 'hrsh7th/vim-vsnip-integ'
     Plug 'rafamadriz/friendly-snippets'

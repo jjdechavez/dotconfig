@@ -19,14 +19,15 @@ source $HOME/.config/nvim/plug-config/tagalong.vim
 " source $HOME/.config/nvim/plug-config/telescope-config.vim
 
 " Lua plug config
-" luafile $HOME/.config/nvim/lua/plugins/compe-config.lua
+source $HOME/.config/nvim/plug-config/lsp-config.vim
+luafile $HOME/.config/nvim/lua/plugins/compe-config.lua
+" luafile $HOME/.config/nvim/lua/plugins/cmp-config.lua
 luafile $HOME/.config/nvim/lua/plugins/lspinstall-config.lua
 luafile $HOME/.config/nvim/lua/plugins/nvimtree-config.lua
 luafile $HOME/.config/nvim/lua/plugins/treesitter-config.lua
 luafile $HOME/.config/nvim/lua/plugins/dap-config.lua
 
 " LSP
-source $HOME/.config/nvim/plug-config/lsp-config.vim
 luafile $HOME/.config/nvim/lua/lsp/efm-general-ls.lua
 luafile $HOME/.config/nvim/lua/lsp/python-ls.lua
 luafile $HOME/.config/nvim/lua/lsp/ruby-ls.lua
