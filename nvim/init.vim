@@ -16,8 +16,9 @@ source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/vsnip.vim
 " source $HOME/.config/nvim/plug-config/nvimtree-config.vim
 " source $HOME/.config/nvim/plug-config/telescope-config.vim
+
 " Lua plug config
-luafile $HOME/.config/nvim/lua/plugins/compe-config.lua
+" luafile $HOME/.config/nvim/lua/plugins/compe-config.lua
 luafile $HOME/.config/nvim/lua/plugins/lspinstall-config.lua
 luafile $HOME/.config/nvim/lua/plugins/nvimtree-config.lua
 luafile $HOME/.config/nvim/lua/plugins/treesitter-config.lua
