@@ -14,6 +14,7 @@ source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 " source $HOME/.config/nvim/plug-config/ale.vim
 source $HOME/.config/nvim/plug-config/vsnip.vim
+source $HOME/.config/nvim/plug-config/tagalong.vim
 " source $HOME/.config/nvim/plug-config/nvimtree-config.vim
 " source $HOME/.config/nvim/plug-config/telescope-config.vim
 
