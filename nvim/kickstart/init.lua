@@ -50,16 +50,23 @@ vim.cmd [[
 	syntax on
 ]]
 
+-- copy on clipboard
 vim.o.clipboard = 'unnamedplus'
 
+-- Scroll when 8 remaining
+vim.opt.scrolloff = 8 -- is one of my fav
+vim.opt.sidescrolloff = 8
+
 --Incremental live completion (note: this is now a default on master)
-vim.o.inccommand = 'nosplit'
+-- vim.o.inccommand = 'nosplit'
+vim.o.splitbelow = true
+vim.o.splitright = true
 
 --Set highlight on search
 vim.o.hlsearch = false
 
---Make line numbers default
-vim.wo.number = true
+--Make line numbers relativenumber
+vim.wo.relativenumber = true
 
 --Do not save when switching buffers (note: this is now a default on master)
 vim.o.hidden = true
@@ -112,6 +119,10 @@ vim.api.nvim_set_keymap('n', '<M-k>', ":resize +2<CR>", { noremap = true, silent
 vim.api.nvim_set_keymap('n', '<M-h>', ":vertical resize -2<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<M-l>', ":vertical resize +2<CR>", { noremap = true, silent = true })
 
+-- TAB in genral mode will move to text buffer
+vim.api.nvim_set_keymap('n', '<TAB>', ":bnext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-TAB>', ":bprevious<CR>", { noremap = true, silent = true })
+
 --Set statusbar
 vim.g.lightline = {
   colorscheme = 'onedark',
@@ -120,7 +131,7 @@ vim.g.lightline = {
 }
 
 --Remap space as leader key
-vim.api.nvim_set_keymap('', '<Spac>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -362,5 +373,5 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
-  },
+  }
 }
