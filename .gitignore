@@ -1,2 +1,2 @@
-nvim/autoload/**/*
-nvim/undodir/*
+nvim/custom/autoload/**/*
+nvim/custom/undodir/*
