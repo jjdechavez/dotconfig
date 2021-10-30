@@ -55,8 +55,8 @@ nmap <leader>s :%s/-/-/g<CR>
 cnoremap BL BL<CR>
 
 " Keeping it centered when using j or k
-nnoremap k kzz
-nnoremap j jzz
+" nnoremap k kzz
+" nnoremap j jzz
 
 " shell
 map <leader>ba i#!/bin/sh<CR><CR>

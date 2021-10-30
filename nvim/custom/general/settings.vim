@@ -45,6 +45,10 @@ set undofile
 "set autochdir                           " Your working directory will always be the same as your working directory
 set completeopt=menu,menuone,noselect    " set completion for nvim-cmp
 
+" Scroll when 8 remaining
+set scrolloff=8
+set sidescrolloff=8
+
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
 " You can't stop me
