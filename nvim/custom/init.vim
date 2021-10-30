@@ -10,13 +10,13 @@ source $HOME/.config/nvim/keys/mappings.vim
 " source $HOME/.config/nvim/plug-config/coc.vim
 " source $HOME/.config/nvim/plug-config/identLine.vim
 " source $HOME/.config/nvim/plug-config/nerdtree.vim
-source $HOME/.config/nvim/plug-config/fzf.vim
-source $HOME/.config/nvim/plug-config/rnvimr.vim
+" source $HOME/.config/nvim/plug-config/fzf.vim
+" source $HOME/.config/nvim/plug-config/rnvimr.vim
 " source $HOME/.config/nvim/plug-config/ale.vim
 source $HOME/.config/nvim/plug-config/vsnip.vim
 source $HOME/.config/nvim/plug-config/tagalong.vim
 " source $HOME/.config/nvim/plug-config/nvimtree-config.vim
-" source $HOME/.config/nvim/plug-config/telescope-config.vim
+source $HOME/.config/nvim/plug-config/telescope-config.vim
 
 " Lua plug config
 source $HOME/.config/nvim/plug-config/lsp-config.vim

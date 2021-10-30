@@ -1,10 +1,16 @@
 -- following options are the default
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
+vim.g.netrw_banner = false
+
 require'nvim-tree'.setup {
   open_on_setup = false,
   auto_close = true,
   open_on_tab = false,
+  respect_buf_cwd = 1,
+  update_cwd = false,
+  disable_netrw = false,
+  hijack_netrw = false,
   update_focused_file = {
     enable = true,
   },
