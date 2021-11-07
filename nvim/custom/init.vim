@@ -10,13 +10,13 @@ source $HOME/.config/nvim/keys/mappings.vim
 " source $HOME/.config/nvim/plug-config/coc.vim
 " source $HOME/.config/nvim/plug-config/identLine.vim
 " source $HOME/.config/nvim/plug-config/nerdtree.vim
-source $HOME/.config/nvim/plug-config/fzf.vim
-source $HOME/.config/nvim/plug-config/rnvimr.vim
+" source $HOME/.config/nvim/plug-config/fzf.vim
+" source $HOME/.config/nvim/plug-config/rnvimr.vim
 " source $HOME/.config/nvim/plug-config/ale.vim
 source $HOME/.config/nvim/plug-config/vsnip.vim
 source $HOME/.config/nvim/plug-config/tagalong.vim
 " source $HOME/.config/nvim/plug-config/nvimtree-config.vim
-" source $HOME/.config/nvim/plug-config/telescope-config.vim
+source $HOME/.config/nvim/plug-config/telescope-config.vim
 
 " Lua plug config
 source $HOME/.config/nvim/plug-config/lsp-config.vim
@@ -26,6 +26,7 @@ luafile $HOME/.config/nvim/lua/plugins/lspinstall-config.lua
 luafile $HOME/.config/nvim/lua/plugins/nvimtree-config.lua
 luafile $HOME/.config/nvim/lua/plugins/treesitter-config.lua
 luafile $HOME/.config/nvim/lua/plugins/dap-config.lua
+" luafile $HOME/.config/nvim/lua/plugins/indent-blankline-config.lua
 
 " LSP
 luafile $HOME/.config/nvim/lua/lsp/efm-general-ls.lua

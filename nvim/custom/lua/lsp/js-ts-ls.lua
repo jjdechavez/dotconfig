@@ -14,4 +14,7 @@ require'lspconfig'.tsserver.setup{
   -- capabilities = capabilities,
   root_dir = require('lspconfig/util').root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
   settings = {documentFormatting = false},
+  flags = {
+    debounce_text_changes = 500
+  }
 }

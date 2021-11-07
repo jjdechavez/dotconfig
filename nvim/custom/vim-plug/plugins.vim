@@ -12,12 +12,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'sheerun/vim-polyglot'
 
     " File Explorer
-    " Plug 'scrooloose/NERDTree'
     Plug 'kyazdani42/nvim-web-devicons' " for file icons
     Plug 'kyazdani42/nvim-tree.lua'
-
-    " Auto pairs for '(' '[' '{'
-    Plug 'jiangmiao/auto-pairs'
 
     " Code completion | LSP
     Plug 'neovim/nvim-lspconfig'
@@ -40,12 +36,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Highlights
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/playground'
-
-    " Linting
-    Plug 'dense-analysis/ale'
-
-    " Indentline
-    " Plug 'Yggdroot/indentLine'   
     
     " Theme
     Plug 'tomasiser/vim-code-dark'
@@ -65,32 +55,35 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-rooter'  
     Plug 'nvim-lua/popup.nvim'
+
+    " Telescope
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
-    " Commenting
-    Plug 'tpope/vim-commentary'
-
-    " Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build' }
-    " Solidity syntax files for Solidity
-    Plug 'tomlion/vim-solidity'
-
+    " Languages
     " elixir
     Plug 'elixir-editors/vim-elixir'
     Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
-
     " rails
     Plug 'tpope/vim-rails'
 
-    " Ranger
-    Plug 'kevinhwang91/rnvimr'
-
+    " Etc
+    " Solidity syntax files for Solidity
+    Plug 'tomlion/vim-solidity'
+    " Commenting
+    Plug 'tpope/vim-commentary'
     " Debugging
     Plug 'mfussenegger/nvim-dap'
-
+    " Ranger
+    Plug 'kevinhwang91/rnvimr'
+    " Auto pairs for '(' '[' '{'
+    Plug 'jiangmiao/auto-pairs'
+    " Close html tags
     Plug 'AndrewRadev/tagalong.vim'
+    " Idention guide
+    " Plug 'lukas-reineke/indent-blankline.nvim'
+    " Linting
+    " Plug 'dense-analysis/ale'
 
 call plug#end()
-
-" autocmd VimEnter *
-" \ if len(filter(values(g:plugs),))
