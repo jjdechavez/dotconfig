@@ -26,6 +26,7 @@ luafile $HOME/.config/nvim/lua/plugins/lspinstall-config.lua
 luafile $HOME/.config/nvim/lua/plugins/nvimtree-config.lua
 luafile $HOME/.config/nvim/lua/plugins/treesitter-config.lua
 luafile $HOME/.config/nvim/lua/plugins/dap-config.lua
+" luafile $HOME/.config/nvim/lua/plugins/indent-blankline-config.lua
 
 " LSP
 luafile $HOME/.config/nvim/lua/lsp/efm-general-ls.lua
