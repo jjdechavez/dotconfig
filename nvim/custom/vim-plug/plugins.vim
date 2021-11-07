@@ -41,11 +41,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tomasiser/vim-code-dark'
     Plug 'arzg/vim-colors-xcode'    
     Plug 'morhetz/gruvbox'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
     Plug 'sonph/onehalf', { 'rtp': 'vim' }
     Plug 'adrian5/oceanic-next-vim'
     Plug 'altercation/vim-colors-solarized'
+    Plug 'mhartington/oceanic-next'
+    Plug 'EdenEast/nightfox.nvim'
+    Plug 'itchyny/lightline.vim'
 
     " Git
     Plug 'tpope/vim-fugitive'
