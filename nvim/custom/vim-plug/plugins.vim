@@ -85,5 +85,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'lukas-reineke/indent-blankline.nvim'
     " Linting
     " Plug 'dense-analysis/ale'
+    " Project cwd
+    Plug 'ahmedkhalf/project.nvim'
+    " Buffer styles
+    Plug 'akinsho/bufferline.nvim'
 
 call plug#end()

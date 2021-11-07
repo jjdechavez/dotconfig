@@ -17,8 +17,8 @@ set splitbelow                          " Horizontal splits will automatically b
 set splitright                          " Vertical splits will automatically be to the right
 
 " Support colors
-set t_Co=256                            " Support 256 colors
-" set termguicolors
+" set t_Co=256                            " Support 256 colors
+set termguicolors
 
 set conceallevel=0                      " So that I can see `` in markdown files
 set tabstop=2                           " Insert 2 spaces for a tab

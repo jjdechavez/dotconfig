@@ -7,10 +7,11 @@ nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <C-s> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <silent> <leader>ca <cmd>lua vim.lsp.code_action()<CR>
 
 " LspSaga
 " nnoremap <silent> K :Lspsaga hover_doc<CR>
-nnoremap <silent> <leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
+" nnoremap <silent> <leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
 " nnoremap <silent> <C-p> :Lspsaga diagnostic_jump_prev<CR>
 " nnoremap <silent> <C-n> :Lspsaga diagnostic_jump_next<CR>
 

@@ -26,7 +26,7 @@ luafile $HOME/.config/nvim/lua/plugins/lspinstall-config.lua
 luafile $HOME/.config/nvim/lua/plugins/nvimtree-config.lua
 luafile $HOME/.config/nvim/lua/plugins/treesitter-config.lua
 luafile $HOME/.config/nvim/lua/plugins/dap-config.lua
-" luafile $HOME/.config/nvim/lua/plugins/indent-blankline-config.lua
+luafile $HOME/.config/nvim/lua/plugins/bufferline-config.lua
 
 " LSP
 luafile $HOME/.config/nvim/lua/lsp/efm-general-ls.lua
@@ -48,4 +48,5 @@ source $HOME/.config/nvim/themes/airline.vim
 " source $HOME/.config/nvim/themes/vim-colors-xcode.vim
 " source $HOME/.config/nvim/themes/gruvbox.vim
 source $HOME/.config/nvim/themes/oceanic-next.vim
+" source $HOME/.config/nvim/themes/onehalf.vim
 " source $HOME/.config/nvim/themes/solorized.vim
