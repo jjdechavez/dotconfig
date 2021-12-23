@@ -1,4 +1,5 @@
 -- Find more schemas here: https://www.schemastore.org/json/
+
 local schemas = {
   {
     description = "TypeScript compiler configuration file",
@@ -136,7 +137,7 @@ local schemas = {
     },
   },
   {
-    description = "Packer template JSON configuration",
+    description = "Packer tempate JSON configuration",
     fileMatch = {
       "packer.json",
     },
