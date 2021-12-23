@@ -49,6 +49,8 @@ set completeopt=menu,menuone,noselect    " set completion for nvim-cmp
 set scrolloff=8
 set sidescrolloff=8
 
+let g:vimsyn_embed= 'l'
+
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
 " You can't stop me

@@ -10,5 +10,5 @@ nightfox.setup({
 nightfox.load()
 
 vim.cmd([[
-let g:lightline = { 'colorscheme': 'nightfox' }
+  let g:lightline = { 'colorscheme': 'nightfox' }
 ]])

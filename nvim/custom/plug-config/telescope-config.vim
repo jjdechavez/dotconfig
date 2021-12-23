@@ -45,8 +45,7 @@ require('telescope').setup{
   pickers = {
     find_files = {
       -- find_command = { "fd", "--type=file", "--hidden", "-s", "-a" },
-      -- find_command = { "fd", "--type=file", "--hidden", "-s", "-a", require('lspconfig.util').root_pattern(".git")(vim.fn.expand("%:p")) },
-      -- cwd = require('lspconfig.util').root_pattern(".git")(vim.fn.expand("%:p")),
+      -- find_command = { "fd", "--type=file", "-s", "-a", os.execute("git rev-parse --show-toplevel") },
     },
     live_grep = {
       --@usage don't include the filename in the search results
@@ -67,7 +66,8 @@ require('telescope').load_extension('projects')
 require('telescope').load_extension('fzf')
 EOF
 
-nnoremap <leader>f <cmd>Telescope git_files<cr>
+nnoremap <leader>gf <cmd>Telescope git_files<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>g <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope file_browser<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>

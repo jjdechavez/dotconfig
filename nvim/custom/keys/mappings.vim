@@ -54,6 +54,10 @@ nmap <leader>s :%s/-/-/g<CR>
 " BLines
 cnoremap BL BL<CR>
 
+" Buffer close
+nnoremap <Leader>bh :BufferLineCloseLeft<CR>
+nnoremap <Leader>bl :BufferLineCloseRight<CR>
+
 " Keeping it centered when using j or k
 " nnoremap k kzz
 " nnoremap j jzz

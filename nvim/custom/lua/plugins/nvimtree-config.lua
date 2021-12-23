@@ -15,7 +15,7 @@ require'nvim-tree'.setup {
     enable = true,
   },
   diagnostics = {
-    enable = true,
+    enable = false,
     icons = {
       hint = "",
       info = "",
@@ -45,7 +45,7 @@ require'nvim-tree'.setup {
   },
   ignore = { ".git", "node_modules", ".cache" },
   quit_on_open = 0,
-  hide_dotfiles = 1,
+  hide_dotfiles = 0,
   git_hl = 1,
   root_folder_modifier = ":t",
   allow_resize = 1,
