@@ -1,2 +1,3 @@
 nvim/custom/autoload/**/*
 nvim/custom/undodir/*
+nvim/lua-scratch/plugin/packer_compiled.lua
