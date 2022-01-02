@@ -35,6 +35,7 @@ null_ls.setup {
         "heex"
       },
     },
+    formatting.mix,
     -- formatting.black.with { extra_args = { "--fast" } },
     -- formatting.stylua,
   },
