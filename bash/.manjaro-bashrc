@@ -138,13 +138,53 @@ ex ()
   fi
 }
 
+
 test-microphone() {
-    arecord -vvv -f dat /dev/null
+	arecord -vvv -f dat /dev/null
 }
 
 webcam() {
 	sudo modprobe v4l2loopback exclusive_caps=1 max_buffers=2
 	gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video2
+}
+
+# Function that copy my current bashrc into my ExternalDrive. (/mnt/ExternalHDD/my/dotconfig/bash/here)
+backup-bashrc() {
+  #  Checkif manjaro-bashrc is exist on dotconfig
+  #   - If exist, remove the old one
+  #     > cp new bashrc from $HOME directory to dotconfig
+  #   - else, cp new bashrc from $HOME directory to dotconfig
+
+  push-to-github() {
+    echo "Preparing to push on github."
+    my
+    cd dotconfig
+
+    git add bash/.manjaro-bashrc
+    read -p 'Commit message: ' message
+    git commit -m "$message"
+    git push
+    cd
+  }
+
+  update-bashrc() {
+    echo "Starting to update .manjaro-bashrc"
+    cp $HOME/.bashrc /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc
+    echo "Updated .manjaro-bashrc complete!"
+
+    push-to-github
+  }
+
+  if [[ -f /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc ]]; then
+    echo "Exist, starting to remove old .manjaro-bashrc"
+    rm /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc
+    echo "Deleted .manjaro-bashrc"
+
+    update-bashrc
+  else
+    echo ".manjaro-bashrc does not exist."
+    update-bashrc
+  fi
 }
 
 # export PATH=/usr/local/lib/nodejs/node-v14.17.0-linux-x64/bin:$PATH
@@ -159,6 +199,9 @@ export PATH=$HOME/.local/go/bin:$PATH
 export GOPATH=$HOME/.local/go
 export PATH=$PATH:/usr/local/go/bin
 
+# maven
+export PATH=$PATH:/usr/local/share/apache-maven-3.8.3/bin:$PATH
+
 alias techmaker='git work && echo "Git email: $(git email)" && cd /mnt/ExternalHDD/techmaker'
 alias digiteer='git work && echo "Git email: $(git email)" && cd /mnt/ExternalHDD/office/digiteer'
 alias my='git personal && echo "Git email: $(git email)" && cd /mnt/ExternalHDD/my'
@@ -166,3 +209,4 @@ alias playground='cd /mnt/ExternalHDD/playGround'
 alias clone-repos='git personal && echo "Git email: $(git email)" && cd /mnt/ExternalHDD/clone-repo'
 alias test-microphone='test-microphone'
 alias dlsr-webcam='setup-dlsr-webcam'
+alias vimconf='cd ~/.config/nvim && nvim init.lua'
