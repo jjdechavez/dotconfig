@@ -148,45 +148,6 @@ webcam() {
 	gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video2
 }
 
-# Function that copy my current bashrc into my ExternalDrive. (/mnt/ExternalHDD/my/dotconfig/bash/here)
-backup-bashrc() {
-  #  Checkif manjaro-bashrc is exist on dotconfig
-  #   - If exist, remove the old one
-  #     > cp new bashrc from $HOME directory to dotconfig
-  #   - else, cp new bashrc from $HOME directory to dotconfig
-
-  push-to-github() {
-    echo "Preparing to push on github."
-    my
-    cd dotconfig
-
-    git add bash/.manjaro-bashrc
-    read -p 'Commit message: ' message
-    git commit -m "$message"
-    git push
-    cd
-  }
-
-  update-bashrc() {
-    echo "Starting to update .manjaro-bashrc"
-    cp $HOME/.bashrc /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc
-    echo "Updated .manjaro-bashrc complete!"
-
-    push-to-github
-  }
-
-  if [[ -f /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc ]]; then
-    echo "Exist, starting to remove old .manjaro-bashrc"
-    rm /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc
-    echo "Deleted .manjaro-bashrc"
-
-    update-bashrc
-  else
-    echo ".manjaro-bashrc does not exist."
-    update-bashrc
-  fi
-}
-
 # export PATH=/usr/local/lib/nodejs/node-v14.17.0-linux-x64/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
@@ -210,3 +171,49 @@ alias clone-repos='git personal && echo "Git email: $(git email)" && cd /mnt/Ext
 alias test-microphone='test-microphone'
 alias dlsr-webcam='setup-dlsr-webcam'
 alias vimconf='cd ~/.config/nvim && nvim init.lua'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Function that copy my current bashrc into my ExternalDrive. (/mnt/ExternalHDD/my/dotconfig/bash/here)
+backup-bashrc() {
+  #  Checkif manjaro-bashrc is exist on dotconfig
+  #   - If exist, remove the old one
+  #     > cp new bashrc from $HOME directory to dotconfig
+  #   - else, cp new bashrc from $HOME directory to dotconfig
+
+  push-to-github() {
+    echo "Preparing to push on github."
+    my
+    cd dotconfig
+
+    git add bash/.manjaro-bashrc
+    read -p 'Commit message: ' message
+    git commit -m "$message"
+
+    echo "Starting to push on github."
+    git push
+    echo "Succesfully pushed on github."
+    cd
+  }
+
+  update-bashrc() {
+    echo "Starting to update .manjaro-bashrc"
+    cp $HOME/.bashrc /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc
+    echo "Updated .manjaro-bashrc complete!"
+
+    push-to-github
+  }
+
+  if [[ -f /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc ]]; then
+    echo "Exist, starting to remove old .manjaro-bashrc"
+    rm /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc
+    echo "Deleted .manjaro-bashrc"
+
+    update-bashrc
+  else
+    echo ".manjaro-bashrc does not exist."
+    update-bashrc
+  fi
+}
