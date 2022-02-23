@@ -217,3 +217,7 @@ backup-bashrc() {
     update-bashrc
   fi
 }
+
+listen_ports() {
+  sudo lsof -i -P -n | grep LISTEN
+}
