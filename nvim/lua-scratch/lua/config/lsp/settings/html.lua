@@ -1,3 +1,3 @@
 return {
-  filetypes = { "eelixir", "heex" }
+  filetypes = { "html", "eelixir", "heex", "leex" }
 }
