@@ -18,7 +18,7 @@ help() {
 }
 
 ############################################################
-# Version                                                     #
+# Version                                                  #
 ############################################################
 version() {
    # Display version
@@ -32,50 +32,57 @@ version() {
 ############################################################
 ############################################################
 
+push_bashrc_to_github() {
+  echo "Preparing to push bashrc on github."
+  my
+  cd dotconfig
+
+  git add bash/.manjaro-bashrc
+  read -p 'Commit message: ' message
+  git commit -m "$message"
+
+  echo "Starting to push on github."
+  git push
+  echo "Succesfully pushed on github."
+  cd $CURRENT_DIR
+}
+
+update_bashrc() {
+  echo "Starting to update .manjaro-bashrc"
+  cp $HOME/.bashrc /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc
+  echo "Updated succesfully .manjaro-bashrc"
+
+  push_bashrc_to_github
+}
+
 # Function that copy my current bashrc into my ExternalDrive. (/mnt/ExternalHDD/my/dotconfig/bash/here)
 backup_bashrc() {
   #  Checkif manjaro-bashrc is exist on dotconfig
   #   - If exist, remove the old one
   #     > cp new bashrc from $HOME directory to dotconfig
   #   - else, cp new bashrc from $HOME directory to dotconfig
-  if [[ -n "$CONFIG" ]]; then
-    echo "Starting to backup $CONFIG"
-  else 
-    echo "Error: Missing option"
+  echo "Running backup_bashrc"
+
+  if [[ -f /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc ]]; then
+    echo "Exist, starting to remove old .manjaro-bashrc"
+    rm /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc
+    echo "Removed succesfully .manjaro-bashrc"
+
+    update_bashrc
+  else
+    echo ".manjaro-bashrc does not exist."
+    update_bashrc
   fi
-  # push_to_github() {
-  #   echo "Preparing to push on github."
-  #   my
-  #   cd dotconfig
-  #
-  #   git add bash/.manjaro-bashrc
-  #   read -p 'Commit message: ' message
-  #   git commit -m "$message"
-  #
-  #   echo "Starting to push on github."
-  #   git push
-  #   echo "Succesfully pushed on github."
-  #   cd
-  # }
-  #
-  # update_bashrc() {
-  #   echo "Starting to update .manjaro-bashrc"
-  #   cp $HOME/.bashrc /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc
-  #   echo "Updated .manjaro-bashrc complete!"
-  #
-  #   push_to_github
-  # }
-  #
-  # if [[ -f /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc ]]; then
-  #   echo "Exist, starting to remove old .manjaro-bashrc"
-  #   rm /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc
-  #   echo "Deleted .manjaro-bashrc"
-  #
-  #   update_bashrc
-  # else
-  #   echo ".manjaro-bashrc does not exist."
-  #   update_bashrc
-  # fi
+}
+
+main () {
+  if [[ "$CONFIG" == "bashrc" ]]; then
+    backup_bashrc
+  elif [[ "$CONFIG" == "nvim" ]]; then
+    echo "Running backup_nvim"
+  else 
+    echo "Error: Invalid argument"
+  fi
 }
 
 ############################################################
@@ -92,7 +99,8 @@ while getopts ":h:vc:" option; do
          exit;;
       c) # Enter config
          CONFIG=$OPTARG
-         backup_bashrc;;
+         CURRENT_DIR=$(pwd)
+         main;;
      \?) # Invalid option
          echo "Error: Invalid option"
          exit;;
