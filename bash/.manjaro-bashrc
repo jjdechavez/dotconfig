@@ -163,6 +163,12 @@ export PATH=$PATH:/usr/local/go/bin
 # maven
 export PATH=$PATH:/usr/local/share/apache-maven-3.8.3/bin:$PATH
 
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=' -p /usr/bin/python3 '
+export PROJECT_HOME=$HOME/Devel
+source /usr/bin/virtualenvwrapper.sh
+
 alias techmaker='git work && echo "Git email: $(git email)" && cd /mnt/ExternalHDD/techmaker'
 alias digiteer='git work && echo "Git email: $(git email)" && cd /mnt/ExternalHDD/office/digiteer'
 alias my='git personal && echo "Git email: $(git email)" && cd /mnt/ExternalHDD/my'
