@@ -65,7 +65,7 @@ nvim_tree.setup {
   },
   update_focused_file = {
     enable = true,
-    update_cwd = true,
+    update_cwd = false,
     ignore_list = {},
   },
   system_open = {
@@ -82,11 +82,10 @@ nvim_tree.setup {
     timeout = 500,
   },
   view = {
-    width = 30,
+    width = 35,
     height = 30,
     hide_root_folder = false,
-    side = "left",
-    mappings = {
+    side = "left", mappings = {
       custom_only = false,
       list = {
         { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
@@ -103,9 +102,9 @@ nvim_tree.setup {
   },
   actions = {
     open_file = {
-      quit_on_open = true,
+      quit_on_open = false,
       window_picker = {
-            enable = false,
+        enable = true,
       },
     },
   },
