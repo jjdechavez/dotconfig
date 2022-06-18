@@ -11,9 +11,9 @@ help() {
    echo
    echo "Syntax: backup_config.sh [-c|h|v]"
    echo "options:"
-   echo "-c    Config that going to backup."
-   echo "-h    Print help."
-   echo "-v    Print version."
+   echo "-c nvim    Config that going to backup."
+   echo "-h         Print help."
+   echo "-v         Print version."
    echo
 }
 
@@ -131,7 +131,7 @@ main () {
 # Process the input options. Add options as needed.        #
 ############################################################
 # Get the options
-while getopts ":h:vc:" option; do
+while getopts ":hvc:" option; do
    case $option in
       h) # display Help
          help
