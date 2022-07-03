@@ -51,6 +51,7 @@ return packer.startup(function(use)
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use 'nvim-lualine/lualine.nvim' -- statusline
+  use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
 
   -- Color scheme
   use 'EdenEast/nightfox.nvim'
