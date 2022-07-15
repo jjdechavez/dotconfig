@@ -39,7 +39,8 @@ null_ls.setup {
     formatting.elm_format,
     formatting.black.with { extra_args = { "--fast" } },
     formatting.djhtml,
-    formatting.gofmt
+    formatting.gofmt,
+    formatting.prismaFmt
     -- formatting.stylua,
   },
 }
