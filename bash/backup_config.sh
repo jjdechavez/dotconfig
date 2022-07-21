@@ -11,7 +11,7 @@ help() {
    echo
    echo "Syntax: backup_config.sh [-c|h|v]"
    echo "options:"
-   echo "-c nvim    Config that going to backup."
+   echo "-c nvim    Config that going to backup. Available option nvim, bashrc"
    echo "-h         Print help."
    echo "-v         Print version."
    echo
