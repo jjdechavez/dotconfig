@@ -219,6 +219,8 @@ webcam() {
 	gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video2
 }
 
+# Usage passing parameter on function
+# Example: screen_record new-video
 screen_record() {
   ffmpeg -f x11grab -s 1920x1080 -i :0.0 "$1.mkv"
 }
