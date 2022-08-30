@@ -188,6 +188,8 @@ prompt_git() {
 	fi;
 }
 
+source ~/gitstatus/gitstatus.prompt.sh
+
 usernamecolor=$(tput setaf 35);
 locationcolor=$(tput setaf 33);
 workingdirectorycolor=$(tput setaf 35);
@@ -202,8 +204,9 @@ PS1+="\[${usernamecolor}\]\u"; # Displays username
 PS1+="\[${white}\] at ";
 PS1+="\[${locationcolor}\]\h"; # Displays host/device
 PS1+="\[${white}\] in ";
-PS1+="\[${workingdirectorycolor}\]\w"; # Displays base path of current working directory
-PS1+="\$(prompt_git \"\[${white}\] on \[${gitstatuscolor}\]\" \"\[${gitstatuscolor}\]\")"; # Displays git status
+PS1+="\[${workingdirectorycolor}\]\w "; # Displays base path of current working directory
+# PS1+="\$(prompt_git \"\[${white}\] on \[${gitstatuscolor}\]\" \"\[${gitstatuscolor}\]\")"; # Displays git status
+PS1+="\${GITSTATUS_PROMPT}"; # Displays git status
 PS1+="\n";
 PS1+="\[${white}\]\$ \[${reset}\]";
 
@@ -257,4 +260,8 @@ export NVM_DIR="$HOME/.nvm"
 
 listen_ports() {
   sudo lsof -i -P -n | grep LISTEN
+}
+
+random_string() {
+  node /usr/share/node-script/randomString.js $1
 }
