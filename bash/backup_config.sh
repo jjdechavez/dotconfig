@@ -34,7 +34,7 @@ version() {
 
 push_bashrc_to_github() {
   echo "Preparing to push bashrc on github."
-  cd /mnt/ExternalHDD/my/dotconfig/
+  cd $HDD_PATH/my/dotconfig/
 
   git add bash/.manjaro-bashrc
   read -p 'Commit message: ' message
@@ -49,7 +49,7 @@ push_bashrc_to_github() {
 
 update_bashrc() {
   echo "Starting to update .manjaro-bashrc"
-  cp $HOME/.bashrc /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc
+  cp $HOME/.bashrc $HDD_PATH/my/dotconfig/bash/.manjaro-bashrc
   echo "Updated succesfully .manjaro-bashrc"
 
   push_bashrc_to_github
@@ -63,9 +63,9 @@ backup_bashrc() {
   #   - else, cp new bashrc from $HOME directory to dotconfig
   echo "Running backup_bashrc"
 
-  if [[ -f /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc ]]; then
+  if [[ -f $HDD_PATH/my/dotconfig/bash/.manjaro-bashrc ]]; then
     echo "Exist, starting to remove old .manjaro-bashrc"
-    rm /mnt/ExternalHDD/my/dotconfig/bash/.manjaro-bashrc
+    rm $HDD_PATH/my/dotconfig/bash/.manjaro-bashrc
     echo "Removed succesfully .manjaro-bashrc"
 
     update_bashrc
@@ -77,7 +77,7 @@ backup_bashrc() {
 
 push_nvim_to_github() {
   echo "Preparing to push nvim on github."
-  cd /mnt/ExternalHDD/my/dotconfig/
+  cd $HDD_PATH/my/dotconfig/
 
   git add nvim/lua-scratch
   read -p 'Commit message: ' message
@@ -92,7 +92,7 @@ push_nvim_to_github() {
 
 update_nvim() {
   echo "Starting to update nvim"
-  cp -r $HOME/.config/nvim /mnt/ExternalHDD/my/dotconfig/nvim/lua-scratch
+  cp -r $HOME/.config/nvim $HDD_PATH/my/dotconfig/nvim/lua-scratch
   echo "Updated succesfully nvim"
 
   push_nvim_to_github
@@ -105,9 +105,9 @@ backup_nvim() {
   #   - else, cp new bashrc from $HOME directory to dotconfig
   echo "Running backup_nvim"
 
-  if [[ -d /mnt/ExternalHDD/my/dotconfig/nvim/lua-scratch ]]; then
+  if [[ -d $HDD_PATH/my/dotconfig/nvim/lua-scratch ]]; then
     echo "Exist, starting to remove old nvim"
-    rm -rf /mnt/ExternalHDD/my/dotconfig/nvim/lua-scratch
+    rm -rf $HDD_PATH/my/dotconfig/nvim/lua-scratch
     echo "Removed succesfully nvim"
 
     update_nvim
