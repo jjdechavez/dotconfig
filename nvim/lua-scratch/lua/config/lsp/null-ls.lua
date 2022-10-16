@@ -16,25 +16,26 @@ null_ls.setup {
     end
   end,
   sources = {
-    -- null_ls.builtins.formatting.prettier,
-    formatting.prettier.with {
-      filetypes = {
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "vue",
-        "css",
-        "scss",
-        "less",
-        "html",
-        "json",
-        "yaml",
-        "markdown",
-        "graphql",
-        "heex",
-      },
-    },
+    --[[ formatting.prettier.with({ ]]
+    --[[   extra_args = { "--single-quote", "--jsx-single-quote" }, ]]
+    --[[   filetypes = { ]]
+    --[[     "javascript", ]]
+    --[[     "javascriptreact", ]]
+    --[[     "typescript", ]]
+    --[[     "typescriptreact", ]]
+    --[[     "vue", ]]
+    --[[     "css", ]]
+    --[[     "scss", ]]
+    --[[     "less", ]]
+    --[[     "html", ]]
+    --[[     "json", ]]
+    --[[     "yaml", ]]
+    --[[     "markdown", ]]
+    --[[     "graphql", ]]
+    --[[     "heex", ]]
+    --[[   }, ]]
+    --[[ }), ]]
+    formatting.eslint,
     formatting.mix,
     formatting.elm_format,
     formatting.black.with { extra_args = { "--fast" } },

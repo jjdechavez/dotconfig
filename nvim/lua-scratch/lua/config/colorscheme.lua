@@ -1,5 +1,6 @@
--- Nightfox colorschemes: 'nightfox', 'dayfox', 'dawnfox', 'duskfox', 'nordfox', 'terafox'
-local colorscheme = "nightfox"
+-- Nightfox colorschemes: 'nightfox', 'dayfox', 'dawnfox', 'duskfox', 'nordfox', 'terafox', 'carbonfox'
+-- mosel
+local colorscheme = "coal"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 

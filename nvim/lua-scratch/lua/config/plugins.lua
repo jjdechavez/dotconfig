@@ -59,6 +59,8 @@ return packer.startup(function(use)
 
   -- Color scheme
   use 'EdenEast/nightfox.nvim'
+  use 'cranberry-clockworks/coal.nvim'
+  --[[ use 'shaunsingh/oxocarbon.nvim' ]]
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -79,6 +81,7 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "j-hui/fidget.nvim" -- display nvim-lsp progress
+  --[[ use({ "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" }}) -- LSP elixir ]]
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
