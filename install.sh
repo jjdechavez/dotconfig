@@ -8,8 +8,13 @@ install_nerdfont() {
   echo "Created folder for fonts at ~/.local/share/fonts"
 
   echo "Fetching Fira Code Nerd Font"
-  cd ~/.local/share/fonts && curl -fLo "Fira Code Regular Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/FiraCode/Regular/complete/Fira%20Code%20Regular%20Nerd%20Font%20Complete.ttf
+  cd ~/.local/share/fonts && curl -fLo "Fira Code Regular Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/FiraCode/Regular/complete/Fira%20Code%20Regular%20Nerd%20Font%20Complete.ttf 
   echo "Finished downloading Fira Code Nerd Font"
+
+  echo "Fetching JetBrainsMono"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
+  echo "Finished downloading JetBrainsMono"
+
   echo "Done: Installing nerd fonts!"
 }
 
