@@ -14,6 +14,8 @@ require "config.bufferline"
 require "config.lualine"
 
 
+require('colorizer').setup()
+
 --[[ local elixir = require("elixir") ]]
 --[[]]
 --[[ elixir.setup({ ]]

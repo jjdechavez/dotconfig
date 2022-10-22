@@ -9,13 +9,24 @@ if not status_ok then
   return
 end
 
-local load_ok, nightfox = pcall(require, "nightfox")
-if not load_ok then
-  return
-end
+--[[ local load_ok, nightfox = pcall(require, "nightfox") ]]
+--[[ if not load_ok then ]]
+--[[   return ]]
+--[[ end ]]
+--[[]]
+--[[ nightfox.setup{ ]]
+--[[   options = { ]]
+--[[     transparent = true, ]]
+--[[   }, ]]
+--[[ } ]]
 
-nightfox.setup{
-  options = {
-    transparent = true,
-  },
-}
+--[[ local load_coal, coal = pcall(require, "coal") ]]
+--[[ if not load_coal then ]]
+--[[   return ]]
+--[[ end ]]
+--[[]]
+--[[ coal.setup({ ]]
+--[[   colors = { ]]
+--[[     smoky_black = '#000000' ]]
+--[[   } ]]
+--[[ }) ]]

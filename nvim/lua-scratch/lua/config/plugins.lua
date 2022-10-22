@@ -56,11 +56,12 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
   use 'nvim-lualine/lualine.nvim' -- statusline
   -- use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
+  use 'norcalli/nvim-colorizer.lua' -- util for display colors
 
   -- Color scheme
   use 'EdenEast/nightfox.nvim'
-  use 'cranberry-clockworks/coal.nvim'
-  --[[ use 'shaunsingh/oxocarbon.nvim' ]]
+  --[[ use 'cranberry-clockworks/coal.nvim' ]]
+  use 'jjdechavez/coal.nvim'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
