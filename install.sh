@@ -68,11 +68,27 @@ install_tmux_on_arch() {
   sudo pacman -S xclip
 }
 
+# Install Delta - git syntax highlight
+install_delta() {
+  echo "Work: Installing delta"
+  # TODO: setup for ubuntu
+  # [ -n "$(cat /etc/os-release | grep Ubuntu)" ] && install_delta_on_ubuntu
+  [ -f "/etc/arch-release" ] && install_delta_on_arch
+
+  echo "Done: Installing delta"
+}
+
+install_delta_on_arch() {
+  echo "Installing delta on arch"
+  sudo pacman -S git-delta
+}
+
 setup() {
   echo "Starting to setup.."
   install_nerdfont
   install_fzf
   install_tmux
+  install_delta
   echo "Done"
 }
 
