@@ -83,6 +83,20 @@ install_delta_on_arch() {
   sudo pacman -S git-delta
 }
 
+install_lazygit() {
+  echo "Work: Installing lazygit"
+  [ -f "/etc/arch-release" ] && install_lazygit_on_arch
+
+  echo "Work: Copy lazygit config.yml"
+  cp ./lazygit/config.yml $HOME/.config/lazygit/
+  echo "Done: Installing lazygit"
+}
+
+install_lazygit_on_arch() {
+  echo "Installing lazygit on arch"
+  sudo pacman -S lazygit
+}
+
 setup() {
   echo "Starting to setup.."
   install_nerdfont
