@@ -13,21 +13,6 @@ require "config.nvim-tree"
 require "config.bufferline"
 require "config.lualine"
 require "config.toggleterm"
-
+require "config.whichkey"
 
 require('colorizer').setup()
-
---[[ local elixir = require("elixir") ]]
---[[]]
---[[ elixir.setup({ ]]
---[[  -- here we specify the path we built our elixir-ls, ]]
---[[  -- here we setup this in home directory,  ]]
---[[  -- make sure you are pointing to right path ]]
---[[  cmd = { "/home/jerald/.elixir-ls/release/language_server.sh" }, ]]
---[[  settings = elixir.settings({ ]]
---[[   dialyzerEnabled = true, ]]
---[[   fetchDeps = false, ]]
---[[   enableTestLenses = false, ]]
---[[   suggestSpecs = false, ]]
---[[  }), ]]
---[[ }) ]]

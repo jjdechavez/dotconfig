@@ -58,6 +58,7 @@ return packer.startup(function(use)
   -- use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use 'norcalli/nvim-colorizer.lua' -- util for display colors
   use "akinsho/toggleterm.nvim"
+  use "folke/which-key.nvim"
 
   -- Color scheme
   use 'EdenEast/nightfox.nvim'
