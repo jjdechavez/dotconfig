@@ -228,6 +228,10 @@ screen_record() {
   ffmpeg -f x11grab -s 1920x1080 -i :0.0 "$1.mkv"
 }
 
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
+
 # export PATH=/usr/local/lib/nodejs/node-v14.17.0-linux-x64/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
