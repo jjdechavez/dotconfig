@@ -7,11 +7,11 @@ help() {
    # Display Help
    echo "Backup configurations"
    echo
-   echo "Currently supported .bashrc"
+   echo "Currently supported .bashrc, .bash_aliases, nvim"
    echo
    echo "Syntax: backup_config.sh [-c|h|v]"
    echo "options:"
-   echo "-c nvim    Config that going to backup. Available option nvim, bashrc"
+   echo "-c nvim    Config that going to backup. Available option nvim, bashrc, bash_aliases"
    echo "-h         Print help."
    echo "-v         Print version."
    echo
@@ -117,11 +117,34 @@ backup_nvim() {
   fi
 }
 
+update_bash_aliases() {
+  echo "Starting to update bash_aliases"
+  cp $HOME/.bash_aliases $HDD_PATH/my/dotconfig/bash/.bash_aliases
+  echo "Updated bash_aliases succesfully "
+}
+
+backup_bash_aliases() {
+  echo "Running backup_bash_aliases"
+
+  if [[ -d $HDD_PATH/my/dotconfig/bash/.bash_aliases ]]; then
+    echo "Exist, starting to remove old bash_aliases"
+    rm $HDD_PATH/my/dotconfig/bash/.bash_aliases
+    echo "Removed bash_aliases succesfully"
+
+    update_bash_aliases
+  else
+    echo "bash_aliases does not exist."
+    update_bash_aliases
+  fi
+}
+
 main () {
   if [[ "$CONFIG" == "bashrc" ]]; then
     backup_bashrc
   elif [[ "$CONFIG" == "nvim" ]]; then
     backup_nvim
+  elif [[ "$CONFIG" == "bash_aliases" ]]; then
+    backup_bash_aliases
   else 
     echo "Error: Invalid argument"
   fi
