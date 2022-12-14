@@ -1,6 +1,14 @@
+# Append on .bashrc
+# if [ -f ~/.bash_aliases ]; then
+#     source ~/.bash_aliases
+# fi
+
+alias sb='source ~/.bashrc'
+
 # DIRECTORY ALIASES
 alias stationfive='git work && echo "Git email: $(git email)" && cd $HDD_PATH/office/stationfive'
 alias my='git personal && echo "Git email: $(git email)" && cd $HDD_PATH/my'
+alias playground='git personal && echo "Git email: $(git email)" && cd $HDD_PATH/playGround'
 
 # GIT ALIASES
 # Common
