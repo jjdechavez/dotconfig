@@ -46,6 +46,10 @@ lsp_installer.on_server_ready(function(server)
 	    opts = vim.tbl_deep_extend("force", prisma_opts, opts)
 	  end
 
+	  if server.name == "tailwindcss" then
+	    local tailwindcss_opts = require("config.lsp.settings.tailwindcss")
+	    opts = vim.tbl_deep_extend("force", tailwindcss_opts, opts)
+	  end
 
 	 --[[ if server.name == "elixirls" then ]]
 	 --[[ 	local elixir_opts = require("config.lsp.settings.elixir") ]]
