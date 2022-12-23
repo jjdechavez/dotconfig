@@ -59,6 +59,7 @@ return packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua' -- util for display colors
   use "akinsho/toggleterm.nvim"
   use "folke/which-key.nvim"
+  use "nathom/filetype.nvim" -- better filetype
 
   -- Color scheme
   use 'EdenEast/nightfox.nvim'
