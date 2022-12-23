@@ -8,10 +8,10 @@ if not snip_status_ok then
   return
 end
 
--- it uses the plugin "rafamadriz/friendly-snippets" 
+-- it uses the plugin "rafamadriz/friendly-snippets"
 --[[ require("luasnip/loaders/from_vscode").lazy_load() ]]
 require("luasnip/loaders/from_vscode").lazy_load({
-  paths = { "~/.config/nvim/lua/config/snippets" }
+  paths = { "~/repos/friendly-snippets" } -- when using paths the friendly-snippets not working
 })
 
 -- Improve Tab Exp.
@@ -58,7 +58,7 @@ cmp.setup {
   },
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
+    ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),

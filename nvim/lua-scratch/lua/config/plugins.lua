@@ -63,8 +63,7 @@ return packer.startup(function(use)
 
   -- Color scheme
   use 'EdenEast/nightfox.nvim'
-  --[[ use 'jjdechavez/coal.nvim' ]]
-  use '/mnt/ExternalDrive/my/projects/coal.nvim'
+  use 'jjdechavez/coal.nvim'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
