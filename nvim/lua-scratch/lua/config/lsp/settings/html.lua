@@ -10,9 +10,9 @@ return {
     "leex",
     -- "edge" -- When Added the blade_formatter ignore and got lsp html
   },
-  --[[ settings = { ]]
-  --[[   includeLanguages = { ]]
-  --[[     edge = "html" ]]
-  --[[   } ]]
-  --[[ } ]]
+  settings = {
+    --[[ includeLanguages = { ]]
+    --[[   edge = "html" ]]
+    --[[ } ]]
+  }
 }
