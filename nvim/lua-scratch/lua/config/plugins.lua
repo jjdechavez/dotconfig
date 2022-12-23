@@ -88,14 +88,15 @@ return packer.startup(function(use)
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
-  use 'nvim-telescope/telescope-media-files.nvim'
 
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
+    run = function()
+      pcall(require('nvim-treesitter.install').update { with_sync = true })
+    end,
   }
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use 'JoosepAlviste/nvim-ts-context-commentstring' -- dunno if it works
 
   -- Git
   use "lewis6991/gitsigns.nvim"
