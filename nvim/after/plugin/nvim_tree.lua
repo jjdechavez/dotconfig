@@ -1,15 +1,5 @@
--- following options are the default
--- each of these are documented in `:help nvim-tree.OPTION_NAME`
-
-local status_ok, nvim_tree = pcall(require, "nvim-tree")
-if not status_ok then
-  return
-end
-
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-  return
-end
+local nvim_tree = require('nvim-tree')
+local nvim_tree_config = require('nvim-tree.config')
 
 -- Replaces auto_close
 local tree_cb = nvim_tree_config.nvim_tree_callback
@@ -62,7 +52,7 @@ nvim_tree.setup {
     timeout = 500,
   },
   view = {
-    width = 35,
+    width = 60,
     hide_root_folder = false,
     side = "left", mappings = {
       custom_only = false,
@@ -112,14 +102,16 @@ nvim_tree.setup {
     },
   },
 
---  unknown options as of 22.05
---
---  update_to_buf_dir = {
---    enable = true,
---    auto_open = true,
---  },
---  auto_resize = true,
---  git_hl = 1,
---  root_folder_modifier = ":t",
+  --  unknown options as of 22.05
+  --
+  --  update_to_buf_dir = {
+  --    enable = true,
+  --    auto_open = true,
+  --  },
+  --  auto_resize = true,
+  --  git_hl = 1,
+  --  root_folder_modifier = ":t",
 
 }
+
+vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle NvimTree" })

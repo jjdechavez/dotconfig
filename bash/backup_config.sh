@@ -92,7 +92,7 @@ push_nvim_to_github() {
 
 update_nvim() {
   echo "Starting to update nvim"
-  cp -r $HOME/.config/nvim $HDD_PATH/my/dotconfig/nvim/lua-scratch
+  cp -r $HOME/.config/nvim $HDD_PATH/my/dotconfig/nvim
   echo "Updated succesfully nvim"
 
   push_nvim_to_github
@@ -105,9 +105,9 @@ backup_nvim() {
   #   - else, cp new bashrc from $HOME directory to dotconfig
   echo "Running backup_nvim"
 
-  if [[ -d $HDD_PATH/my/dotconfig/nvim/lua-scratch ]]; then
+  if [[ -d $HDD_PATH/my/dotconfig/nvim ]]; then
     echo "Exist, starting to remove old nvim"
-    rm -rf $HDD_PATH/my/dotconfig/nvim/lua-scratch
+    rm -rf $HDD_PATH/my/dotconfig/nvim
     echo "Removed succesfully nvim"
 
     update_nvim
@@ -145,7 +145,7 @@ main () {
     backup_nvim
   elif [[ "$CONFIG" == "bash_aliases" ]]; then
     backup_bash_aliases
-  else 
+  else
     echo "Error: Invalid argument"
   fi
 }
