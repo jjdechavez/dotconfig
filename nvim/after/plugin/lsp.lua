@@ -63,9 +63,11 @@ local cmp_snippets = {
 luasnip.filetype_extend("edge", { "html", "edge" })
 
 
-require("luasnip/loaders/from_vscode").lazy_load({
-  paths = { "~/repos/friendly-snippets" } -- when using paths the friendly-snippets not working
-})
+-- Custom snippets
+-- require("luasnip/loaders/from_vscode").lazy_load({
+--   paths = { "~/repos/friendly-snippets" }
+-- })
+require("luasnip/loaders/from_vscode").lazy_load()
 
 
 lsp.setup_nvim_cmp({
