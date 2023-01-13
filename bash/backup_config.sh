@@ -75,6 +75,7 @@ backup_bashrc() {
   fi
 }
 
+# Depreicated or update git add path
 push_nvim_to_github() {
   echo "Preparing to push nvim on github."
   cd $HDD_PATH/my/dotconfig/
@@ -94,8 +95,6 @@ update_nvim() {
   echo "Starting to update nvim"
   cp -r $HOME/.config/nvim $HDD_PATH/my/dotconfig/nvim
   echo "Updated succesfully nvim"
-
-  push_nvim_to_github
 }
 
 backup_nvim() {
