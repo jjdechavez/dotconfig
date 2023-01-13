@@ -63,11 +63,9 @@ local cmp_snippets = {
 luasnip.filetype_extend("edge", { "html", "edge" })
 
 
--- Custom snippets
--- require("luasnip/loaders/from_vscode").lazy_load({
---   paths = { "~/repos/friendly-snippets" }
--- })
-require("luasnip/loaders/from_vscode").lazy_load()
+require("luasnip/loaders/from_vscode").lazy_load({
+  paths = { "~/repos/friendly-snippets" } -- when using paths the friendly-snippets not working
+})
 
 
 lsp.setup_nvim_cmp({
@@ -100,6 +98,10 @@ lsp.on_attach(function(client, bufnr)
     return
   end
 
+  if client.name == "tsserver" then
+    client.server_capabilities.documentFormattingProvider = false
+  end
+
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
   vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
@@ -113,8 +115,10 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+require"fidget".setup{}
 
 vim.diagnostic.config({
   -- disable next warning on current line
   virtual_text = false,
+  underline = false
 })

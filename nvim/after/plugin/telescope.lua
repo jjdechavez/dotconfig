@@ -11,16 +11,16 @@ require("telescope").setup({
     file_previewer = previewers.vim_buffer_cat.new,
     grep_previewer = previewers.vim_buffer_vimgrep.new,
     qflist_previewer = previewers.vim_buffer_qflist.new,
-    layout_strategy = "vertical",
-    layout_config = {
-      vertical = {
-        height = 0.9,
-        preview_cutoff = 0,
-        preview_height = 0.6,
-        results_height = 0.3,
-        width = 0.5,
-      },
-    },
+    -- layout_strategy = "vertical",
+    -- layout_config = {
+    --   vertical = {
+    --     height = 0.9,
+    --     preview_cutoff = 0,
+    --     preview_height = 0.6,
+    --     results_height = 0.3,
+    --     width = 0.5,
+    --   },
+    -- },
 
     -- common files to ignore
     file_ignore_patterns = {
@@ -61,8 +61,12 @@ require("telescope").setup({
 })
 
 
+-- Default
+-- vim.keymap.set('n', '<leader>f',
+--   "<cmd>lua require('telescope.builtin').find_files()<cr>",
+--   { desc = "[F]ind Files" })
 vim.keymap.set('n', '<leader>f',
-  "<cmd>lua require('telescope.builtin').find_files()<cr>",
+  "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
   { desc = "[F]ind Files" })
 vim.keymap.set('n', '<leader>F', "<cmd>Telescope live_grep theme=ivy<cr>", { desc = "Search grep" })
 vim.keymap.set('n', '<C-p>', builtin.git_files, {})
@@ -75,5 +79,6 @@ vim.keymap.set('n', '<leader>sh', "<cmd>Telescope help_tags<cr>", { desc = "[S]e
 vim.keymap.set('n', '<leader>sk', "<cmd>Telescope keymaps<cr>", { desc = "[S]earch [K]eymaps" })
 vim.keymap.set('n', '<leader>sc', "<cmd>Telescope commands<cr>", { desc = "[S]earch [C]ommands" })
 vim.keymap.set('n', '<leader>sr', "<cmd>Telescope registers<cr>", { desc = "[S]earch [R]egisters" })
-vim.keymap.set("n", "<leader>sm", "<cmd>Telescope man_pages<cr>",{ desc = "[S]earch [M]an page" })
-vim.keymap.set("n", "<leader>so", "<cmd>Telescope oldfiles<cr>", { desc = "[S]earch [O]pen Recent File"})
+vim.keymap.set("n", "<leader>sm", "<cmd>Telescope man_pages<cr>", { desc = "[S]earch [M]an page" })
+vim.keymap.set("n", "<leader>so", "<cmd>Telescope oldfiles<cr>", { desc = "[S]earch [O]pen Recent File" })
+vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })

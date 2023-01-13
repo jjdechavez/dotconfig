@@ -53,3 +53,7 @@ vim.keymap.set("n", "<C-h>", "<C-\\><C-N><C-w>h", { silent = true, desc = "Navig
 vim.keymap.set("n", "<C-j>", "<C-\\><C-N><C-w>j", { silent = true, desc = "Navigate terminal to below" })
 vim.keymap.set("n", "<C-k>", "<C-\\><C-N><C-w>k", { silent = true, desc = "Navigate terminal to above" })
 vim.keymap.set("n", "<C-l>", "<C-\\><C-N><C-w>l", { silent = true, desc = "Navigate terminal to right" })
+
+-- Git signs
+vim.keymap.set("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", { silent = true, desc = "Next Hunk" })
+vim.keymap.set("n", "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", { silent = true, desc = "Previos Hunk" })

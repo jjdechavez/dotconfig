@@ -22,10 +22,17 @@ return require('packer').startup(function(use)
   -- colorscheme
   use({
     'jjdechavez/coal.nvim',
-    config = function()
-      require('coal').setup()
-    end
+    -- config = function()
+    --   require('coal').setup()
+    -- end
   })
+  use {
+    "mcchrish/zenbones.nvim",
+    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+    -- In Vim, compat mode is turned on as Lush only works in Neovim.
+    requires = "rktjmp/lush.nvim"
+  }
 
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.0',
     -- or                            , branch = '0.1.x',
@@ -57,6 +64,7 @@ return require('packer').startup(function(use)
     }
   }
   use "jose-elias-alvarez/null-ls.nvim"
+  use 'j-hui/fidget.nvim'
 
   -- addons
   use('mbbill/undotree')
@@ -74,7 +82,6 @@ return require('packer').startup(function(use)
       require('Comment').setup()
     end
   } -- if it has problem use this tpope/vim-commentary
-  use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' } -- buffer tabs
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -85,6 +92,7 @@ return require('packer').startup(function(use)
     config = function() require("nvim-autopairs").setup {} end
   }
   use 'wellle/context.vim'
+  use 'theprimeagen/harpoon'
 
   -- git
   use('tpope/vim-fugitive')

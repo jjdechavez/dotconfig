@@ -1,5 +1,15 @@
-function SetColorscheme(color)
+function SetColorscheme(color, theme)
   color = color or "coal"
+
+  if theme then
+    vim.opt.background = theme
+
+    -- if color == "zenbones" then
+    --   vim.g.zenbones_lightness = "bright"
+    -- end
+  end
+
+
   vim.cmd.colorscheme(color)
 
   -- Transparent background
@@ -8,4 +18,4 @@ function SetColorscheme(color)
 end
 
 
-SetColorscheme()
+SetColorscheme("zenbones", "dark")
