@@ -93,6 +93,10 @@ return require('packer').startup(function(use)
   }
   use 'wellle/context.vim'
   use 'theprimeagen/harpoon'
+  use({
+    "aserowy/tmux.nvim",
+    config = function() return require("tmux").setup() end
+  })
 
   -- git
   use('tpope/vim-fugitive')
