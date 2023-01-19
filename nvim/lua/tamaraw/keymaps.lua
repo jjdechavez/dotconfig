@@ -21,8 +21,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- use nvim clipboard to paste not system clipboard
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
--- Better yank/copy
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "[y]ank to system clipboard" })
 -- copy on nvim - need learn it
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
@@ -56,4 +55,4 @@ vim.keymap.set("n", "<C-l>", "<C-\\><C-N><C-w>l", { silent = true, desc = "Navig
 
 -- Git signs
 vim.keymap.set("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", { silent = true, desc = "Next Hunk" })
-vim.keymap.set("n", "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", { silent = true, desc = "Previos Hunk" })
+vim.keymap.set("n", "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", { silent = true, desc = "Previous Hunk" })
