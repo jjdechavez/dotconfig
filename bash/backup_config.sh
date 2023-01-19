@@ -7,11 +7,11 @@ help() {
    # Display Help
    echo "Backup configurations"
    echo
-   echo "Currently supported .bashrc, .bash_aliases, nvim"
+   echo "Currently supported .bashrc, .bash_aliases, nvim, tmux"
    echo
    echo "Syntax: backup_config.sh [-c|h|v]"
    echo "options:"
-   echo "-c nvim    Config that going to backup. Available option nvim, bashrc, bash_aliases"
+   echo "-c nvim    Config that going to backup. Available option nvim, bashrc, bash_aliases, tmux"
    echo "-h         Print help."
    echo "-v         Print version."
    echo
@@ -137,6 +137,27 @@ backup_bash_aliases() {
   fi
 }
 
+update_tmux() {
+  echo "Starting to update tmux.conf"
+  cp $HOME/.tmux.conf $HDD_PATH/my/dotconfig/tmux/.tmux.conf
+  echo "Updated tmux.conf succesfully "
+}
+
+backup_tmux() {
+  echo "Running backup_tmux"
+
+  if [[ -d $HDD_PATH/my/dotconfig/tmux/.tmux.conf ]]; then
+    echo "Exist, starting to remove old tmux.conf"
+    rm $HDD_PATH/my/dotconfig/tmux/.tmux.conf
+    echo "Removed tmux.conf succesfully"
+
+    update_tmux
+  else
+    echo "tmux.conf does not exist."
+    update_tmux
+  fi
+}
+
 main () {
   if [[ "$CONFIG" == "bashrc" ]]; then
     backup_bashrc
@@ -144,6 +165,8 @@ main () {
     backup_nvim
   elif [[ "$CONFIG" == "bash_aliases" ]]; then
     backup_bash_aliases
+  elif [[ "$CONFIG" == "tmux" ]]; then
+    backup_tmux
   else
     echo "Error: Invalid argument"
   fi
