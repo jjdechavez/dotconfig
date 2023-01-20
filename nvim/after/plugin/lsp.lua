@@ -102,20 +102,39 @@ lsp.on_attach(function(client, bufnr)
     client.server_capabilities.documentFormattingProvider = false
   end
 
-  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-  vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
-  vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
-  vim.keymap.set("n", "[d", vim.diagnostic.goto_next, opts)
-  vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
-  vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
-  vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
-  vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
-  vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
+  local nmap = function(keys, func, desc)
+    if desc then
+      desc = "LSP: " .. desc
+    end
+
+    vim.keymap.set("n", keys, func, { buffer = bufnr, remap = false, desc = desc })
+  end
+
+  -- Common I used
+  nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+  nmap("K", vim.lsp.buf.hover, "Hover Documentation")
+
+  nmap("gr", require('telescope.builtin').lsp_references, "[G]oto [R]eferences")
+  nmap("gI", vim.lsp.buf.type_definition, "[G]oto [I]mplementation")
+  nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
+
+  -- Symbols
+  nmap("<leader>ws", require('telescope.builtin').lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+  nmap("<leader>ds", require('telescope.builtin').lsp_document_symbols, "[D]ocument [S]ymbols")
+
+  nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+  nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+  nmap("<C-K>", vim.lsp.buf.signature_help, "Signature Documentation")
+
+  -- Diagnostic
+  nmap("<leader>vd", vim.diagnostic.open_float, "[V]iew [D]iagnostic")
+  nmap("[d", vim.diagnostic.goto_next, "Goto Next [D]iagnostic")
+  nmap("]d", vim.diagnostic.goto_prev, "Goto Previous [D]iagnostic")
+
 end)
 
 lsp.setup()
-require"fidget".setup{}
+require "fidget".setup {}
 
 vim.diagnostic.config({
   -- disable next warning on current line
