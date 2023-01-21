@@ -124,7 +124,7 @@ lsp.on_attach(function(client, bufnr)
 
   nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
   nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-  nmap("<C-K>", vim.lsp.buf.signature_help, "Signature Documentation")
+  -- nmap("<C-K>", vim.lsp.buf.signature_help, "Signature Documentation")
 
   -- Diagnostic
   nmap("<leader>vd", vim.diagnostic.open_float, "[V]iew [D]iagnostic")
@@ -134,6 +134,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
 require "fidget".setup {}
 
 vim.diagnostic.config({

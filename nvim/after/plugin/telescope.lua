@@ -60,7 +60,6 @@ require("telescope").setup({
   },
 })
 
-
 -- Default
 -- vim.keymap.set('n', '<leader>f',
 --   "<cmd>lua require('telescope.builtin').find_files()<cr>",
@@ -82,3 +81,5 @@ vim.keymap.set('n', '<leader>sr', "<cmd>Telescope registers<cr>", { desc = "[S]e
 vim.keymap.set("n", "<leader>sm", "<cmd>Telescope man_pages<cr>", { desc = "[S]earch [M]an page" })
 vim.keymap.set("n", "<leader>so", "<cmd>Telescope oldfiles<cr>", { desc = "[S]earch [O]pen Recent File" })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>en', "<cmd>Telescope find_files cwd=~/.config/nvim <cr>", { desc = '[E]dit [N]eovim config' })
+vim.keymap.set('n', '<leader>ec', "<cmd>Telescope find_files cwd=~/.config <cr>", { desc = '[E]dit Dot[C]onfig' })

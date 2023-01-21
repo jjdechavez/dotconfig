@@ -34,4 +34,4 @@ vim.opt.splitright = true
 -- Winbar
 -- vim.opt_local is only show first buffer while vim.opt it shows in every buffer
 -- vim.opt_local.winbar = "%=%m %f"
--- vim.opt.winbar = "%{%v:lua.require('tamaraw.custom.winbar').eval()%}"
+vim.opt.winbar = "%{%v:lua.require('tamaraw.custom.winbar').eval()%}"

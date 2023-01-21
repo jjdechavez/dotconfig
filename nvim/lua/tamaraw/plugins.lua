@@ -17,7 +17,7 @@ end
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+  use { 'wbthomason/packer.nvim' }
 
   -- colorscheme
   use({
@@ -26,22 +26,11 @@ return require('packer').startup(function(use)
     --   require('coal').setup()
     -- end
   })
-  use {
-    "mcchrish/zenbones.nvim",
-    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
-    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
-    -- In Vim, compat mode is turned on as Lush only works in Neovim.
-    requires = "rktjmp/lush.nvim"
-  }
+  use { 'mcchrish/zenbones.nvim', requires = 'rktjmp/lush.nvim' }
 
-  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    -- or                            , branch = '0.1.x',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
-
-  -- syntax highlight
+  -- Editing
   use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
-
+  use 'nvim-treesitter/nvim-treesitter-context'
   use {
     'VonHeikemen/lsp-zero.nvim',
     requires = {
@@ -63,49 +52,23 @@ return require('packer').startup(function(use)
       { 'rafamadriz/friendly-snippets' },
     }
   }
-  use "jose-elias-alvarez/null-ls.nvim"
-  use 'j-hui/fidget.nvim'
+  use { 'jose-elias-alvarez/null-ls.nvim' }
 
-  -- addons
-  use('mbbill/undotree')
-  use "nathom/filetype.nvim" -- better filetype
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-  }
-  use('rstacruz/vim-closer') -- tag closer
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end
-  } -- if it has problem use this tpope/vim-commentary
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  } -- statusline below
-  use 'tpope/vim-surround'
-  use {
-    "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
-  }
-  use 'wellle/context.vim'
-  use 'theprimeagen/harpoon'
-  use({
-    "aserowy/tmux.nvim",
-    config = function() return require("tmux").setup() end
-  })
-
-  -- git
-  use('tpope/vim-fugitive')
-  use {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require('gitsigns').setup()
-    end
-  }
+  -- General
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { { 'nvim-lua/plenary.nvim' } } }
+  use { 'mbbill/undotree' }
+  use { 'nathom/filetype.nvim' } -- better filetype
+  use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons', } }
+  use { 'rstacruz/vim-closer' } -- tag closer
+  use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end } -- if it has problem use this tpope/vim-commentary
+  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+  use { 'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup {} end }
+  use { 'theprimeagen/harpoon' }
+  use { "aserowy/tmux.nvim", config = function() return require('tmux').setup() end }
+  use { 'tpope/vim-surround' }
+  use { 'tpope/vim-fugitive' }
+  use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
+  use { 'j-hui/fidget.nvim' }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
