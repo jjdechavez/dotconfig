@@ -58,7 +58,15 @@ return require('packer').startup(function(use)
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { { 'nvim-lua/plenary.nvim' } } }
   use { 'mbbill/undotree' }
   use { 'nathom/filetype.nvim' } -- better filetype
-  use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons', } }
+  use {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    }
+  }
   use { 'rstacruz/vim-closer' } -- tag closer
   use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end } -- if it has problem use this tpope/vim-commentary
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
