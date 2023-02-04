@@ -56,6 +56,3 @@ vim.keymap.set("n", "<C-l>", "<C-\\><C-N><C-w>l", { silent = true, desc = "Navig
 -- Git signs
 vim.keymap.set("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", { silent = true, desc = "Next Hunk" })
 vim.keymap.set("n", "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", { silent = true, desc = "Previous Hunk" })
-
--- Neotree
-vim.keymap.set("n", "<leader>e", "<cmd>NeoTreeRevealToggle<cr>", { desc = "Toggle Neotree" })

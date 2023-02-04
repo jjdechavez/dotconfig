@@ -22,6 +22,7 @@ autocmd('TextYankPost', {
   end,
 })
 
+
 autocmd({ "BufWritePre" }, {
   group = TamarawGroup,
   pattern = "*",

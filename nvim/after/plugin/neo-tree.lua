@@ -199,3 +199,5 @@ require("neo-tree").setup({
     }
   }
 })
+
+vim.cmd([[nnoremap \ :NeoTreeShowToggle<cr>]])
