@@ -76,8 +76,8 @@ return require('packer').startup(function(use)
   use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
   use { 'j-hui/fidget.nvim' }
   -- Tag closer
-  use { 'rstacruz/vim-closer' }
-  -- use { 'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup {} end }
+  -- use { 'rstacruz/vim-closer' } -- bad at "" | [] needs to enter
+  use { 'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup {} end }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

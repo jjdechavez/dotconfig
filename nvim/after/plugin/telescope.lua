@@ -50,6 +50,15 @@ require("telescope").setup({
     find_files = {
       hidden = true,
     },
+    buffers = {
+      show_all_buffers = true,
+      sort_mru = true,
+      mappings = {
+        i = {
+          ["<c-d>"] = "delete_buffer"
+        }
+      }
+    }
   },
   extensions = {
     file_browser = {
@@ -60,10 +69,6 @@ require("telescope").setup({
   },
 })
 
--- Default
--- vim.keymap.set('n', '<leader>f',
---   "<cmd>lua require('telescope.builtin').find_files()<cr>",
---   { desc = "[F]ind Files" })
 vim.keymap.set('n', '<leader>f',
   "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
   { desc = "[F]ind Files" })
