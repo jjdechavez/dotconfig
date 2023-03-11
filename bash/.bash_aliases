@@ -32,3 +32,4 @@ alias gcpa='git cherry-pick --abort'
 # UTILITIES
 alias dockerids='docker container ls -q'
 alias dockerstopall='docker stop $(dockerids)'
+alias dockermongo='docker exec -it mongo mongo -u root -p password --authenticationDatabase admin'
