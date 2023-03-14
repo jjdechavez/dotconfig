@@ -15,6 +15,10 @@ alias playground='git personal && echo "Git email: $(git email)" && cd $HDD_PATH
 alias gco='git checkout'
 alias ga='git add'
 alias gst='git status'
+alias gst-staged="git status --short | grep '^\w.'"``
+alias gst-unstaged="git status  --short | grep '^\W.'"
+alias gst-unstaged-tracked="git status  --short | grep '^\s.'"
+alias gst-untracked="git status --short | grep '^??'"
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 # Branch
 alias gb='git branch'
