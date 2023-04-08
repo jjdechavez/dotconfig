@@ -27,6 +27,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
+vim.opt.colorcolumn = "100"
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
@@ -35,3 +36,6 @@ vim.opt.splitright = true
 -- vim.opt_local is only show first buffer while vim.opt it shows in every buffer
 -- vim.opt_local.winbar = "%=%m %f"
 -- vim.opt.winbar = "%{%v:lua.require('tamaraw.custom.winbar').eval()%}"
+-- vim.g.fillchars = {stl = "--", slnc = "--"}
+-- vim.o.statusline = "%F%=%3l:%%-2c%=%m"
+-- vim.cmd("hi Statusline guifb=#C51162")
