@@ -31,11 +31,11 @@ null_ls.setup {
     --     "markdown",
     --     "graphql",
     --     "heex",
-    --   },
+    --   }
     -- }),
     formatting.eslint,
     -- formatting.mix,
-    -- formatting.elm_format,
+    formatting.elm_format,
     -- formatting.black.with { extra_args = { "--fast" } },
     -- formatting.djhtml,
     -- formatting.gofmt,
@@ -43,7 +43,7 @@ null_ls.setup {
     -- formatting.blade_formatter.with({
     --   extra_args = { "--indent-size=2" },
     --   filetypes = { "edge", "blade" }
-    -- })
     -- formatting.stylua,
+    -- })
   },
 }

@@ -17,5 +17,5 @@ function SetColorscheme(color, theme)
   -- vim.api.nvim.set_hl(0, "NormalFloat", { bg = "none" })
 end
 
-
 SetColorscheme("zenbones", "dark")
+-- SetColorscheme("zenbones", "light")

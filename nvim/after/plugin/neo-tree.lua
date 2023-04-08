@@ -1,3 +1,6 @@
+local hdmi_width = 60
+local default_width = 30
+
 require("neo-tree").setup({
   close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
   popup_border_style = "rounded",
@@ -66,7 +69,7 @@ require("neo-tree").setup({
   },
   window = {
     position = "left",
-    width = 60,
+    width = hdmi_width,
     mapping_options = {
       noremap = true,
       nowait = true,
