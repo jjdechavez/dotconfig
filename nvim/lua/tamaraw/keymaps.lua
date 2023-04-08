@@ -43,15 +43,15 @@ vim.keymap.set("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = "Remove [H]ighl
 vim.keymap.set("n", "<leader>c", "<cmd>Bdelete!<CR>", { desc = "Close [C]urrent Buffer" })
 
 -- Buffers navigation
-vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Go to Next Buffer", noremap = true, silent = true })
-vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Go to Previous Buffer", noremap = true, silent = true })
+-- vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Go to Next Buffer", noremap = true, silent = true })
+-- vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Go to Previous Buffer", noremap = true, silent = true })
 
 -- Terminal --
 -- Better terminal navigation
-vim.keymap.set("n", "<C-h>", "<C-\\><C-N><C-w>h", { silent = true, desc = "Navigate terminal to left" })
-vim.keymap.set("n", "<C-j>", "<C-\\><C-N><C-w>j", { silent = true, desc = "Navigate terminal to below" })
-vim.keymap.set("n", "<C-k>", "<C-\\><C-N><C-w>k", { silent = true, desc = "Navigate terminal to above" })
-vim.keymap.set("n", "<C-l>", "<C-\\><C-N><C-w>l", { silent = true, desc = "Navigate terminal to right" })
+-- vim.keymap.set("n", "<C-h>", "<C-\\><C-N><C-w>h", { silent = true, desc = "Navigate terminal to left" })
+-- vim.keymap.set("n", "<C-j>", "<C-\\><C-N><C-w>j", { silent = true, desc = "Navigate terminal to below" })
+-- vim.keymap.set("n", "<C-k>", "<C-\\><C-N><C-w>k", { silent = true, desc = "Navigate terminal to above" })
+-- vim.keymap.set("n", "<C-l>", "<C-\\><C-N><C-w>l", { silent = true, desc = "Navigate terminal to right" })
 
 -- Git signs
 vim.keymap.set("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", { silent = true, desc = "Next Hunk" })
