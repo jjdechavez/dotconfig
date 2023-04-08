@@ -14,6 +14,7 @@ alias playground='git personal && echo "Git email: $(git email)" && cd $HDD_PATH
 # Common
 alias gco='git checkout'
 alias ga='git add'
+alias gfa='git fetch -a'
 alias gst='git status'
 alias gst-staged="git status --short | grep '^\w.'"``
 alias gst-unstaged="git status  --short | grep '^\W.'"
