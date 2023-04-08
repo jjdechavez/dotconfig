@@ -57,7 +57,6 @@ return require('packer').startup(function(use)
   -- General
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { { 'nvim-lua/plenary.nvim' } } }
   use { 'mbbill/undotree' }
-  use { 'nathom/filetype.nvim' } -- better filetype
   use {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
@@ -76,7 +75,6 @@ return require('packer').startup(function(use)
   use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
   use { 'j-hui/fidget.nvim' }
   -- Tag closer
-  -- use { 'rstacruz/vim-closer' } -- bad at "" | [] needs to enter
   use { 'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup {} end }
 
   -- Automatically set up your configuration after cloning packer.nvim
