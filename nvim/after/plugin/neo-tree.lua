@@ -125,6 +125,10 @@ require("neo-tree").setup({
       [">"] = "next_source",
     }
   },
+  source_selector = {
+    winbar = false,
+    statusline = true
+  },
   nesting_rules = {},
   filesystem = {
     filtered_items = {
@@ -192,11 +196,11 @@ require("neo-tree").setup({
       position = "bottom",
       mappings = {
         ["A"]  = "git_add_all",
-        ["u"] = "git_unstage_file",
-        ["a"] = "git_add_file",
-        ["r"] = "git_revert_file",
+        ["u"]  = "git_unstage_file",
+        ["a"]  = "git_add_file",
+        ["r"]  = "git_revert_file",
         ["cc"] = "git_commit",
-        ["P"] = "git_push",
+        ["P"]  = "git_push",
         ["gg"] = "git_commit_and_push",
       }
     }

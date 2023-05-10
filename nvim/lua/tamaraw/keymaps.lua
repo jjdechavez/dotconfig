@@ -67,3 +67,6 @@ vim.keymap.set("n", "<leader>F",  "<cmd>lua require('fzf-lua').grep()<CR>", { si
 vim.keymap.set("n", "<leader><space>", "<cmd>lua require('fzf-lua').buffers()<CR>", { silent = true, desc = '[ ] Find existing buffers' })
 vim.keymap.set("n", "<leader>sk", "<cmd>lua require('fzf-lua').keymaps()<CR>", { silent = true, desc = "[S]earch [K]eymaps" })
 vim.keymap.set('n', '<leader>en', "<cmd>FzfLua files cwd=~/.config/nvim <cr>", { desc = '[E]dit [N]eovim config' })
+vim.keymap.set("n", "<leader>gs", "<cmd>lua require('fzf-lua').git_status()<CR>", { silent = true, desc = "[G]it [S]tatus" })
+vim.keymap.set("c", "G", "<cmd>lua require('fzf-lua').git_status()<CR>", { silent = true, desc = "[G]it Status" })
+vim.keymap.set("n", "<leader>gb", "<cmd>lua require('fzf-lua').git_branches()<CR>", { silent = true, desc = "[G]it [B]ranches" })

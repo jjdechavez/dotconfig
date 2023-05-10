@@ -12,5 +12,12 @@ require 'fzf-lua'.setup {
     winopts = {
       split = "belowright new"
     }
+  },
+  git = {
+    status = {
+      winopts = {
+        split  = "belowright new"
+      }
+    }
   }
 }
