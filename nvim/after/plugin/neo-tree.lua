@@ -80,7 +80,7 @@ require("neo-tree").setup({
         nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
       },
       ["<2-LeftMouse>"] = "open",
-      ["<cr>"] = "open",
+      ["<cr>"] = "open_with_window_picker",
       ["<esc>"] = "revert_preview",
       ["P"] = { "toggle_preview", config = { use_float = true } },
       ["l"] = "focus_preview",
