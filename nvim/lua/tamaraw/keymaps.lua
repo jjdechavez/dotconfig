@@ -63,11 +63,7 @@ vim.keymap.set("n", "<leader>guh", "<cmd>lua require 'gitsigns'.unstage_hunk()<c
 
 -- FZF
 vim.keymap.set("n", "<leader>f", "<cmd>lua require('fzf-lua').files()<CR>", { silent = true, desc = "[F]ind Files" })
-vim.keymap.set("n", "<leader>F", function()
-  require 'fzf-lua'.grep({ winopts = { split = "belowright new" } })
-end, { silent = true, desc = "Search grep" })
-vim.keymap.set("n", "<leader><space>", "<cmd>lua require('fzf-lua').buffers()<CR>",
-  { silent = true, desc = '[ ] Find existing buffers' })
-vim.keymap.set("n", "<leader>sk", "<cmd>lua require('fzf-lua').keymaps()<CR>",
-  { silent = true, desc = "[S]earch [K]eymaps" })
+vim.keymap.set("n", "<leader>F",  "<cmd>lua require('fzf-lua').grep()<CR>", { silent = true, desc = "Search grep" })
+vim.keymap.set("n", "<leader><space>", "<cmd>lua require('fzf-lua').buffers()<CR>", { silent = true, desc = '[ ] Find existing buffers' })
+vim.keymap.set("n", "<leader>sk", "<cmd>lua require('fzf-lua').keymaps()<CR>", { silent = true, desc = "[S]earch [K]eymaps" })
 vim.keymap.set('n', '<leader>en', "<cmd>FzfLua files cwd=~/.config/nvim <cr>", { desc = '[E]dit [N]eovim config' })

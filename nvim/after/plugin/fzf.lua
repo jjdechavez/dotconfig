@@ -7,5 +7,8 @@ require 'fzf-lua'.setup {
       row    = 0.35,
       col    = 0.50,
     }
+  },
+  grep = {
+    split = "belowright new"
   }
 }
