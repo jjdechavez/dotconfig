@@ -90,21 +90,11 @@ return require('packer').startup(function(use)
   use { 'theprimeagen/harpoon' }
   use { "aserowy/tmux.nvim", config = function() return require('tmux').setup() end }
   use { 'tpope/vim-surround' }
-  use { 'tpope/vim-fugitive' }
+  -- use { 'tpope/vim-fugitive' } -- fzf.git_status great
   use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
   use { 'j-hui/fidget.nvim' }
   -- Tag closer
   use { 'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup {} end }
-
-  -- Debugging - not working
-  -- use 'mfussenegger/nvim-dap'
-  -- use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
-  -- use { "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } }
-  -- use {
-  --   "microsoft/vscode-js-debug",
-  --   opt = true,
-  --   run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
-  -- }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
