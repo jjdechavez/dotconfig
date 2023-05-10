@@ -55,7 +55,9 @@ return require('packer').startup(function(use)
   use { 'jose-elias-alvarez/null-ls.nvim' }
 
   -- General
-  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { { 'nvim-lua/plenary.nvim' } } }
+  use { 'ibhagwan/fzf-lua',
+    requires = { 'nvim-tree/nvim-web-devicons' }
+  }
   use { 'mbbill/undotree' }
   use {
     "nvim-neo-tree/neo-tree.nvim",
@@ -64,6 +66,23 @@ return require('packer').startup(function(use)
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
+      {
+        's1n7ax/nvim-window-picker',
+        tag = "v1.*",
+        config = function()
+          require 'window-picker'.setup({
+            autoselect_one = true,
+            include_current = false,
+            filter_rules = {
+              bo = {
+                filetype = { 'neo-tree', "neo-tree-popup", "notify" },
+                buftype = { 'terminal', "quickfix" },
+              },
+            },
+            other_win_hl_color = '#e35e4f',
+          })
+        end,
+      }
     }
   }
   use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end } -- if it has problem use this tpope/vim-commentary
@@ -76,6 +95,16 @@ return require('packer').startup(function(use)
   use { 'j-hui/fidget.nvim' }
   -- Tag closer
   use { 'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup {} end }
+
+  -- Debugging - not working
+  -- use 'mfussenegger/nvim-dap'
+  -- use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+  -- use { "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } }
+  -- use {
+  --   "microsoft/vscode-js-debug",
+  --   opt = true,
+  --   run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
+  -- }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

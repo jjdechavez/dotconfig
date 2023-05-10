@@ -28,3 +28,6 @@ autocmd({ "BufWritePre" }, {
   pattern = "*",
   command = [[%s/\s\+$//e]],
 })
+
+-- Escape comment when entered
+-- vim.cmd [[autocmd FileType * set formatoptions-=ro]]

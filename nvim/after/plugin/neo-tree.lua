@@ -189,14 +189,14 @@ require("neo-tree").setup({
   },
   git_status = {
     window = {
-      position = "float",
+      position = "bottom",
       mappings = {
         ["A"]  = "git_add_all",
-        ["gu"] = "git_unstage_file",
-        ["ga"] = "git_add_file",
-        ["gr"] = "git_revert_file",
-        ["gc"] = "git_commit",
-        ["gp"] = "git_push",
+        ["u"] = "git_unstage_file",
+        ["a"] = "git_add_file",
+        ["r"] = "git_revert_file",
+        ["cc"] = "git_commit",
+        ["P"] = "git_push",
         ["gg"] = "git_commit_and_push",
       }
     }
@@ -204,3 +204,4 @@ require("neo-tree").setup({
 })
 
 vim.cmd([[nnoremap \ :NeoTreeShowToggle<cr>]])
+vim.keymap.set("n", "<leader>gg", ":Neotree float git_status<cr>")
