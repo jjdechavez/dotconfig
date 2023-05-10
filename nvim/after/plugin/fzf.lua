@@ -9,6 +9,8 @@ require 'fzf-lua'.setup {
     }
   },
   grep = {
-    split = "belowright new"
+    winopts = {
+      split = "belowright new"
+    }
   }
 }
