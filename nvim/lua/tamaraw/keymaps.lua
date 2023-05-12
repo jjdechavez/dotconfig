@@ -53,6 +53,9 @@ vim.keymap.set("n", "<leader>c", "<cmd>Bdelete!<CR>", { desc = "Close [C]urrent 
 -- vim.keymap.set("n", "<C-k>", "<C-\\><C-N><C-w>k", { silent = true, desc = "Navigate terminal to above" })
 -- vim.keymap.set("n", "<C-l>", "<C-\\><C-N><C-w>l", { silent = true, desc = "Navigate terminal to right" })
 
+-- Undotree
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+
 -- Git signs
 vim.keymap.set("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", { silent = true, desc = "Next Hunk" })
 vim.keymap.set("n", "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>",
@@ -68,5 +71,5 @@ vim.keymap.set("n", "<leader><space>", "<cmd>lua require('fzf-lua').buffers()<CR
 vim.keymap.set("n", "<leader>sk", "<cmd>lua require('fzf-lua').keymaps()<CR>", { silent = true, desc = "[S]earch [K]eymaps" })
 vim.keymap.set('n', '<leader>en', "<cmd>FzfLua files cwd=~/.config/nvim <cr>", { desc = '[E]dit [N]eovim config' })
 vim.keymap.set("n", "<leader>gs", "<cmd>lua require('fzf-lua').git_status()<CR>", { silent = true, desc = "[G]it [S]tatus" })
-vim.keymap.set("c", "G", "<cmd>lua require('fzf-lua').git_status()<CR>", { silent = true, desc = "[G]it Status" })
 vim.keymap.set("n", "<leader>gb", "<cmd>lua require('fzf-lua').git_branches()<CR>", { silent = true, desc = "[G]it [B]ranches" })
+vim.keymap.set("n", "<leader>ca", "<cmd>lua require('fzf-lua').lsp_code_actions()<CR>", { silent = true, desc = "[C]ode [A]ction" })

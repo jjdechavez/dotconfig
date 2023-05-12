@@ -71,8 +71,8 @@ return require('packer').startup(function(use)
         tag = "v1.*",
         config = function()
           require 'window-picker'.setup({
-            autoselect_one = false,
-            include_current = true,
+            autoselect_one = true,
+            include_current = false,
             filter_rules = {
               bo = {
                 filetype = { 'neo-tree', "neo-tree-popup", "notify" },

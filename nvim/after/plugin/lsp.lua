@@ -113,15 +113,10 @@ lsp.on_attach(function(client, bufnr)
   nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
   nmap("K", vim.lsp.buf.hover, "Hover Documentation")
 
-  nmap("gr", require('telescope.builtin').lsp_references, "[G]oto [R]eferences")
   nmap("gI", vim.lsp.buf.type_definition, "[G]oto [I]mplementation")
   nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
 
-  -- Symbols
-  nmap("<leader>ws", require('telescope.builtin').lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
-  nmap("<leader>ds", require('telescope.builtin').lsp_document_symbols, "[D]ocument [S]ymbols")
-
-  nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+  -- nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
   nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
   -- nmap("<C-K>", vim.lsp.buf.signature_help, "Signature Documentation")
 
