@@ -1,3 +1,5 @@
+local actions = require "fzf-lua.actions"
+
 require 'fzf-lua'.setup {
   files = {
     previewer = 'false',
@@ -16,8 +18,13 @@ require 'fzf-lua'.setup {
   git = {
     status = {
       winopts = {
-        split  = "belowright new"
+        split = "belowright new"
       }
+    }
+  },
+  buffers = {
+    actions = {
+      ["ctrl-d"] = { actions.buf_del, actions.resume },
     }
   }
 }
