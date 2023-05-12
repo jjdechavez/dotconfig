@@ -90,8 +90,6 @@ lsp.set_preferences({
 })
 
 lsp.on_attach(function(client, bufnr)
-  local opts = { buffer = bufnr, remap = false }
-
   if client.name == "eslint" then
     vim.cmd.LspStop('eslint')
     return
@@ -112,19 +110,19 @@ lsp.on_attach(function(client, bufnr)
   -- Common I used
   nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
   nmap("K", vim.lsp.buf.hover, "Hover Documentation")
-
-  nmap("gI", vim.lsp.buf.type_definition, "[G]oto [I]mplementation")
-  nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
-
-  -- nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+  nmap("<leader>ca", "<cmd>lua require('fzf-lua').lsp_code_actions()<CR>", "[C]ode [A]ction")
   nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-  -- nmap("<C-K>", vim.lsp.buf.signature_help, "Signature Documentation")
 
   -- Diagnostic
-  nmap("<leader>vd", vim.diagnostic.open_float, "[V]iew [D]iagnostic")
+  nmap("<leader>dd", "<cmd>lua require('fzf-lua').diagnostics_document()<CR>",
+    "[D]iagnostic [D]ocuments or current buffer")
   nmap("[d", vim.diagnostic.goto_next, "Goto Next [D]iagnostic")
   nmap("]d", vim.diagnostic.goto_prev, "Goto Previous [D]iagnostic")
 
+  -- Dunno how to use it
+  nmap("gI", vim.lsp.buf.type_definition, "[G]oto [I]mplementation")
+  nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
+  -- nmap("<C-K>", vim.lsp.buf.signature_help, "Signature Documentation")
 end)
 
 lsp.setup()
