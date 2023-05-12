@@ -2,7 +2,7 @@ local hdmi_width = 60
 local default_width = 30
 
 require("neo-tree").setup({
-  close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+  close_if_last_window = true,
   window = {
     position = "left",
     width = hdmi_width,
