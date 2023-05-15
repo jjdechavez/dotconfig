@@ -29,7 +29,13 @@ return require('packer').startup(function(use)
   use { 'mcchrish/zenbones.nvim', requires = 'rktjmp/lush.nvim' }
 
   -- Editing
-  use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    requires = {
+      { 'JoosepAlviste/nvim-ts-context-commentstring' }
+    }
+  }
   use 'nvim-treesitter/nvim-treesitter-context'
   use {
     'VonHeikemen/lsp-zero.nvim',
