@@ -56,6 +56,8 @@ vim.keymap.set("n", "<leader>c", "<cmd>Bdelete!<CR>", { desc = "Close [C]urrent 
 -- Undotree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
+-- Git Blame
+vim.keymap.set("n", "<leader>gf", "<cmd>BlamerToggle<cr>", { silent = true, desc = "[G]it Blame Who the [F]uck" })
 -- Git signs
 vim.keymap.set("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", { silent = true, desc = "Next Hunk" })
 vim.keymap.set("n", "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>",

@@ -27,6 +27,8 @@ return require('packer').startup(function(use)
     -- end
   })
   use { 'mcchrish/zenbones.nvim', requires = 'rktjmp/lush.nvim' }
+  use 'ewilazarus/preto'
+  use 'alligator/accent.vim'
 
   -- Editing
   use {
@@ -98,6 +100,7 @@ return require('packer').startup(function(use)
   use { 'tpope/vim-surround' }
   -- use { 'tpope/vim-fugitive' } -- fzf.git_status great
   use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
+  use { 'APZelos/blamer.nvim' }
   use { 'j-hui/fidget.nvim' }
   -- Tag closer
   use { 'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup {} end }
