@@ -21,6 +21,8 @@ function SetColorscheme(color, theme)
     -- Custom: No background
     vim.cmd("hi Normal guifg=#bcbfc4 ctermfg=250 guibg=NONE")
     vim.cmd("highlight! link SignColumn Normal")
+    -- Gitsign change
+    vim.cmd("hi DiffChange guibg=NONE")
   end
 
   -- Transparent background
