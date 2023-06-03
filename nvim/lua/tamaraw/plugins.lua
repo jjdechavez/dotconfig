@@ -64,7 +64,8 @@ return require('packer').startup(function(use)
 
   -- General
   use { 'ibhagwan/fzf-lua',
-    requires = { 'nvim-tree/nvim-web-devicons' }
+    requires = { 'nvim-tree/nvim-web-devicons' },
+    commit = '4cd83bf754d5bf786a0835511f65643d7b925a55'
   }
   use { 'mbbill/undotree' }
   use {
