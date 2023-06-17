@@ -20,15 +20,14 @@ return require('packer').startup(function(use)
   use { 'wbthomason/packer.nvim' }
 
   -- colorscheme
-  use({
-    'jjdechavez/coal.nvim',
-    -- config = function()
-    --   require('coal').setup()
-    -- end
-  })
+  use 'jjdechavez/coal.nvim'
   use { 'mcchrish/zenbones.nvim', requires = 'rktjmp/lush.nvim' }
   use 'ewilazarus/preto'
   use 'alligator/accent.vim'
+  -- use({
+  --   'ramojus/mellifluous.nvim',
+  --   requires = { 'rktjmp/lush.nvim' },
+  -- })
 
   -- Editing
   use {
