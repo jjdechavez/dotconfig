@@ -14,8 +14,8 @@ alias playground='git personal && echo "Git email: $(git email)" && cd $HDD_PATH
 # Common
 alias gco='git checkout'
 alias ga='git add'
-alias gfa='git fetch -a'
 alias gst='git status'
+alias gfa='git fetch -a'
 alias gst-staged="git status --short | grep '^\w.'"``
 alias gst-unstaged="git status  --short | grep '^\W.'"
 alias gst-unstaged-tracked="git status  --short | grep '^\s.'"
@@ -38,3 +38,4 @@ alias gcpa='git cherry-pick --abort'
 alias dockerids='docker container ls -q'
 alias dockerstopall='docker stop $(dockerids)'
 alias dockermongo='docker exec -it mongo mongo -u root -p password --authenticationDatabase admin'
+alias listnpmglobal="npm list -g --depth=0"
