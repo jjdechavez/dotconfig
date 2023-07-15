@@ -2,6 +2,10 @@ function ZenbonesColorscheme(theme)
   if theme == 'light' then
     vim.g.zenbones_lightness = "dim"
   end
+
+  if theme == 'dark' then
+    vim.g.zenbones_darkness = "stark"
+  end
 end
 
 function AccentColorscheme()
