@@ -33,6 +33,7 @@ alias gcan='gc --amend --no-edit' # Append on last commit without commit message
 alias gcp='git cherry-pick'
 alias gcpc='git cherry-pick --continue'
 alias gcpa='git cherry-pick --abort'
+alias branchContainCommitOf='git branch --contains '
 
 # UTILITIES
 alias dockerids='docker container ls -q'
