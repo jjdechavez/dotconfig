@@ -20,12 +20,6 @@ lsp.configure('sumneko_lua', {
   }
 })
 
--- lsp.configure('tsserver', {
---   on_attach = function(client, bufnr)
---     print('hello tsserver')
---   end
--- })
-
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -60,6 +54,7 @@ local cmp_snippets = {
 }
 
 luasnip.filetype_extend("edge", { "html", "edge" })
+luasnip.filetype_extend("gohtmltmpl", { "html" })
 require("luasnip/loaders/from_vscode").lazy_load()
 -- require("luasnip/loaders/from_vscode").lazy_load({
 --   -- paths = { "~/repos/friendly-snippets" } -- Add local when using paths the friendly-snippets not working

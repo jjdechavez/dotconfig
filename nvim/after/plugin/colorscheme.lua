@@ -24,11 +24,11 @@ function AccentColorscheme()
   -- vim.api.nvim.set_hl(0, "NormalFloat", { bg = "none" })
 end
 
-function MellifluousColorscheme()
-  require 'mellifluous'.setup({
-    color_set = 'mountain'
-  })
-end
+-- function MellifluousColorscheme()
+--   require 'mellifluous'.setup({
+--     color_set = 'mountain'
+--   })
+-- end
 
 function SetColorscheme(color, theme)
   color = color or "coal"

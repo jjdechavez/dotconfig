@@ -60,6 +60,7 @@ return require('packer').startup(function(use)
     }
   }
   use { 'jose-elias-alvarez/null-ls.nvim' }
+  use 'ray-x/go.nvim'
 
   -- General
   use { 'ibhagwan/fzf-lua',
