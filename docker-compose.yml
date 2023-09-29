@@ -1,0 +1,50 @@
+version: '3'
+services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    working_dir: /database
+    volumes:
+      - ./docker/database/:/database/
+
+  mongo:
+    container_name: mongo
+    image: mongo:4.4
+    # restart: always # system bootup it always open
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - ./docker/mongo:/database/
+
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: always
+    ports:
+      - 8282:8080
+    environment:
+      ADMINER_PASSWORD: admin
+      ADMINER_DESIGN: haeckel
+      ADMINER_PLUGINS: enum-option json-column
+    networks:
+      - adminer_network
+    volumes:
+      - ./docker/adminer/:/data
+      - ./adminer-plugins/login-password-less.php:/var/www/html/plugins-enabled/login-password-less.php
+
+volumes:
+  postgres:
+  mongo:
+
+networks:
+  adminer_network:
+    external:
+      name: adminer_network
