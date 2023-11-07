@@ -20,6 +20,23 @@ lsp.configure('sumneko_lua', {
   }
 })
 
+-- configure LSP example
+-- lsp.configure('tsserver', {
+--   on_attach = function(client, bufnr)
+--     print('hello tsserver')
+--   end
+-- })
+
+lsp.configure('tailwindcss', {
+  root_dir = function(fname)
+    local root_pattern = require("lspconfig.util").root_pattern(
+      "tailwind.config.cjs",
+      "tailwind.config.js",
+      "postcss.config.js"
+    )
+    return root_pattern(fname)
+  end,
+})
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -53,12 +70,11 @@ local cmp_snippets = {
   end,
 }
 
-luasnip.filetype_extend("edge", { "html", "edge" })
+luasnip.filetype_extend("edge", { "html" })
 luasnip.filetype_extend("gohtmltmpl", { "html" })
-require("luasnip/loaders/from_vscode").lazy_load()
--- require("luasnip/loaders/from_vscode").lazy_load({
---   -- paths = { "~/repos/friendly-snippets" } -- Add local when using paths the friendly-snippets not working
--- })
+-- Custom snippets
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/repos/friendly-snippets" } })
+-- require("luasnip.loaders.from_vscode").lazy_load()
 
 
 lsp.setup_nvim_cmp({
