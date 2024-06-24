@@ -1,16 +1,7 @@
 local lsp = require("lsp-zero")
 
-lsp.preset("recommended")
-
-lsp.ensure_installed({
-  'tsserver',
-  'sumneko_lua',
-  -- 'eslint',
-  -- 'rust_analyzer',
-})
-
 -- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
+lsp.configure('lua_ls', {
   settings = {
     Lua = {
       diagnostics = {
@@ -38,20 +29,26 @@ lsp.configure('tailwindcss', {
   end,
 })
 
-local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = { 'tsserver', 'lua_ls' },
+  handlers = {
+    function(server_name)
+      require('lspconfig')[server_name].setup({})
+    end,
+  },
 })
 
+local cmp = require('cmp')
+local cmp_action = lsp.cmp_action()
 
--- disable completion with tab
--- this helps with copilot setup
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
+-- local cmp_select = { behavior = cmp.SelectBehavior.Select }
+-- local cmp_mappings = lsp.defaults.cmp_mappings({
+--   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+--   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+--   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+--   ["<C-Space>"] = cmp.mapping.complete(),
+-- })
 
 -- priority for completion
 local cmp_sources = {
@@ -77,10 +74,36 @@ require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/repos/friendly-s
 -- require("luasnip.loaders.from_vscode").lazy_load()
 
 
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings,
+cmp.setup({
   sources = cmp_sources,
-  snippets = cmp_snippets
+  snippets = cmp_snippets,
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+  mapping = cmp.mapping.preset.insert({
+    -- confirm completion item
+    ['<Enter>'] = cmp.mapping.confirm({ select = true }),
+
+    -- trigger completion menu
+    ['<C-Space>'] = cmp.mapping.complete(),
+
+    -- scroll up and down the documentation window
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+
+    -- navigate between snippet placeholders
+    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+
+    -- disable completion with tab
+    -- this helps with copilot setup
+    ['<Tab>'] = nil,
+    ['<S-Tab>'] = nil,
+  }),
+  -- note: if you are going to use lsp-kind (another plugin)
+  -- replace the line below with the function from lsp-kind
+  -- formatting = lsp.cmp_format({details = true}),
 })
 
 lsp.set_preferences({
