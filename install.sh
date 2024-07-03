@@ -55,7 +55,7 @@ install_fzf_on_mac() {
   echo "Installing fzf on mac"
   brew install fzf
   brew install fd
-  brew ripgrep
+  brew install ripgrep
   brew install universal-ctags
   brew install the_silver_searcher
 }
@@ -134,7 +134,7 @@ install_lazygit_on_mac() {
 setup() {
   echo "Starting to setup.."
   # install_nerdfont
-  # install_fzf
+  install_fzf
   # install_tmux
   # install_delta
   # install_lazygit
