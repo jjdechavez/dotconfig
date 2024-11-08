@@ -33,6 +33,7 @@ null_ls.setup {
         "markdown",
         "graphql",
         "heex",
+        "edge"
       },
       cwd = helpers.cache.by_bufnr(function(params)
         return utils.root_pattern(

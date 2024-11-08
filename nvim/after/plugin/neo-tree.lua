@@ -1,11 +1,12 @@
 local hdmi_width = 60
 local default_width = 30
+local mac_width = 45
 
 require("neo-tree").setup({
   close_if_last_window = true,
   window = {
     position = "left",
-    width = hdmi_width,
+    width = mac_width,
     mapping_options = {
       noremap = true,
       nowait = true,
@@ -53,5 +54,5 @@ require("neo-tree").setup({
   }
 })
 
-vim.cmd([[nnoremap \ :NeoTreeShowToggle<cr>]])
-vim.keymap.set("n", "<leader>gg", ":Neotree float git_status<cr>")
+-- vim.cmd([[nnoremap \ :NeoTreeShowToggle<cr>]])
+-- vim.keymap.set("n", "<leader>gg", ":Neotree float git_status<cr>")

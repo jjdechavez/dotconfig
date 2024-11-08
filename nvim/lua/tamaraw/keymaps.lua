@@ -75,3 +75,5 @@ vim.keymap.set('n', '<leader>en', "<cmd>FzfLua files cwd=~/.config/nvim <cr>", {
 vim.keymap.set("n", "<leader>gs", "<cmd>lua require('fzf-lua').git_status()<CR>", { silent = true, desc = "[G]it [S]tatus" })
 vim.keymap.set("n", "<leader>gb", "<cmd>lua require('fzf-lua').git_branches()<CR>", { silent = true, desc = "[G]it [B]ranches" })
 vim.keymap.set("n", "<leader>?", "<cmd>lua require('fzf-lua').help_tags()<CR>", { silent = true, desc = "[?] Nvim Documentation" })
+
+vim.cmd([[nnoremap \ :NeoTreeShowToggle<cr>]])

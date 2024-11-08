@@ -18,20 +18,21 @@ lsp.configure('lua_ls', {
 --   end
 -- })
 
-lsp.configure('tailwindcss', {
-  root_dir = function(fname)
-    local root_pattern = require("lspconfig.util").root_pattern(
-      "tailwind.config.cjs",
-      "tailwind.config.js",
-      "postcss.config.js"
-    )
-    return root_pattern(fname)
-  end,
-})
+-- lsp.configure('tailwindcss', {
+--   root_dir = function(fname)
+--     local root_pattern = require("lspconfig.util").root_pattern(
+--       "tailwind.config.cjs",
+--       "tailwind.config.js",
+--       "postcss.config.js"
+--     )
+--     return root_pattern(fname)
+--   end,
+-- })
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = { 'tsserver', 'lua_ls' },
+  -- ensure_installed = {'ts_ls', 'lua_ls'},
+  ensure_installed = {'lua_ls'},
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup({})
@@ -42,13 +43,15 @@ require('mason-lspconfig').setup({
 local cmp = require('cmp')
 local cmp_action = lsp.cmp_action()
 
--- local cmp_select = { behavior = cmp.SelectBehavior.Select }
--- local cmp_mappings = lsp.defaults.cmp_mappings({
---   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
---   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
---   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
---   ["<C-Space>"] = cmp.mapping.complete(),
--- })
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
+local cmp_mappings = lsp.defaults.cmp_mappings({
+  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+  ["<C-Space>"] = cmp.mapping.complete(),
+})
+
+
 
 -- priority for completion
 local cmp_sources = {
@@ -75,13 +78,14 @@ require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/repos/friendly-s
 
 
 cmp.setup({
+  mapping = cmp_mappings,
   sources = cmp_sources,
   snippets = cmp_snippets,
   window = {
     completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
   },
-  mapping = cmp.mapping.preset.insert({
+    mapping = cmp.mapping.preset.insert({
     -- confirm completion item
     ['<Enter>'] = cmp.mapping.confirm({ select = true }),
 
@@ -128,9 +132,9 @@ lsp.on_attach(function(client, bufnr)
     return
   end
 
-  if client.name == "tsserver" then
-    client.server_capabilities.documentFormattingProvider = false
-  end
+  -- if client.name == "ts_ls" then
+  --   client.server_capabilities.documentFormattingProvider = false
+  -- end
 
   local nmap = function(keys, func, desc)
     if desc then

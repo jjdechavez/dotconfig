@@ -19,6 +19,13 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use { 'wbthomason/packer.nvim' }
 
+  -- Lazy loading:
+  -- Load on specific commands
+  --  use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
+
+  -- Load on an autocommand event
+  -- use {'andymass/vim-matchup', event = 'VimEnter'}
+
   -- colorscheme
   use 'jjdechavez/coal.nvim'
   use { 'mcchrish/zenbones.nvim', requires = 'rktjmp/lush.nvim' }
@@ -54,7 +61,13 @@ return require('packer').startup(function(use)
     }
   }
   use { 'jose-elias-alvarez/null-ls.nvim' }
-  use 'ray-x/go.nvim'
+  use {
+    "pmizio/typescript-tools.nvim",
+    requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    config = function()
+      require("typescript-tools").setup {}
+    end,
+  }
 
   -- General
   use { 'ibhagwan/fzf-lua',

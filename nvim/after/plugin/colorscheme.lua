@@ -60,4 +60,5 @@ function SetColorscheme(color, theme)
 end
 
 -- SetColorscheme("zenbones", "light")
-SetColorscheme("neobones", "dark")
+-- SetColorscheme("neobones", "dark")
+SetColorscheme("tamarawbones", "light")
